@@ -27,11 +27,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 const vue = require('./routes/Vue/index');
 const openlayers = require('./routes/Openlayers/index');
 const css = require('./routes/Css/index');
+const git = require('./routes/Git/index');
 
 app.use('/', index);
 app.use('/vue', vue);
 app.use('/openlayers', openlayers);
 app.use('/css', css);
+app.use('/git', git)
 
 
 // catch 404 and forward to error handler

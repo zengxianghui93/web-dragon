@@ -41,6 +41,9 @@ var docs = {
             case 3:
                 $('#section').load('/css');
                 break;
+            case 4:
+                $('#section').load('/git');
+                break;
         }
     }
 };

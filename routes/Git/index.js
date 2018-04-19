@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-/* Get Css Page. */
+/* Get Git Page. */
 router.get('/', function(req, res, next) {
-    res.render('Css/global-setting');
+    res.render('Git/git');
 });
 
 module.exports = router;
