@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home | web dragon</title>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesheets/prettify-jsdoc.css">
+    <link rel="stylesheet" href="stylesheets/prettify-tomorrow.css">
+    <link rel="stylesheet" href="stylesheets/doc.css">
+    <script src="javascripts/prettify/prettify.js"></script>
+    <script src="javascripts/prettify/lang-css.js"></script>
+</head>
+
+<body>
+    <nav class="nav-bar" id="navBar">
+        <div class="nav-title">
+            <h1><a href="index.html" class="link">Web Dragon</a></h1>
+            <span class="version">v1.0.0</span>
+        </div>
+        <div class="search-container" id="searchCon">
+            <input type="text" placeholder="Search">
+            <ul></ul>
+        </div>
+        <ol class="nav-tab">
+            <li id="api-tab" class="selected">
+                <a href="#">
+                    <h4>API</h4>
+                </a>
+            </li>
+            <!-- <li id="example-tab">
+                <a href="#">
+                    <h4>示例</h4>
+                </a>
+            </li> -->
+        </ol>
+        <div class="nav-api">
+            <h3>Classes</h3>
+            <ul>
+                <li>
+                    <a href="#">Node</a>
+                    <button type="button" class="toggle-subnav btn btn-link">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                    <div class="hidden" id="node_div">
+                        <ul class="inner">
+                            <li><a href="/node">1.利用 Express 托管静态文件</a></li>
+                            <li><a href="/node">2.setSize</a></li>
+                            <li><a href="/node">3.setStyle</a></li>
+                            <li><a href="/node">4.setVariant</a></li>
+                            <li><a href="/node">5.setWeight</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#">Vue</a>
+                    <button type="button" class="toggle-subnav btn btn-link">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                    <div class="hidden" id="vue_div">
+                        <ul class="inner">
+                            <li><a href="#" onclick="docs.loadPage(2)" name="view/vue/echarts-map.html">1.Vue+echarts实现行政区域地图</a></li>
+                            <li><a href="/vue">2.getExtent</a></li>
+                            <li><a href="/vue">3.getRadius</a></li>
+                            <li><a href="/vue">4.setCenter</a></li>
+                            <li><a href="/vue">5.setCenterAndRadius</a></li>
+                            <li><a href="/vue">6.setRadius</a></li>
+                            <li><a href="/vue">7.setSpatialReference</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#">Javascript</a>
+                    <button type="button" class="toggle-subnav btn btn-link">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                    <div class="hidden" id="Javascript_div">
+                        <ul class="inner">
+                            <li><a href="/js">1.getCenter</a></li>
+                            <li><a href="/js">2.getExtent</a></li>
+                            <li><a href="/js">3.getRadius</a></li>
+                            <li><a href="/js">4.setCenter</a></li>
+                            <li><a href="/js">5.setCenterAndRadius</a></li>
+                            <li><a href="/js">6.setRadius</a></li>
+                            <li><a href="/js">7.setSpatialReference</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#">Openlayers</a>
+                    <button type="button" class="toggle-subnav btn btn-link">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                    <div class="hidden" id="openlayers_div">
+                        <ul class="inner">
+                            <li><a href="#" onclick="docs.loadPage(1)" name="views/Openlayers/result_1.html">1.初始化openlayer3</a></li>
+                            <li><a href="#">1.getCenter</a></li>
+                            <li><a href="#">2.getExtent</a></li>
+                            <li><a href="#">3.getRadius</a></li>
+                            <li><a href="#">4.setCenter</a></li>
+                            <li><a href="#">5.setCenterAndRadius</a></li>
+                            <li><a href="#">6.setRadius</a></li>
+                            <li><a href="#">7.setSpatialReference</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#">Html</a>
+                    <button type="button" class="toggle-subnav btn btn-link">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                    <div class="hidden" id="html_div">
+                        <ul class="inner">
+                            <li><a href="/h5">1.getCenter</a></li>
+                            <li><a href="/h5">2.getExtent</a></li>
+                            <li><a href="/h5">3.getRadius</a></li>
+                            <li><a href="/h5">4.setCenter</a></li>
+                            <li><a href="/h5">5.setCenterAndRadius</a></li>
+                            <li><a href="/h5">6.setRadius</a></li>
+                            <li><a href="/h5">7.setSpatialReference</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#">CSS</a>
+                    <button type="button" class="toggle-subnav btn btn-link">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                    <div class="hidden" id="css_div">
+                        <ul class="inner">
+                            <li><a href="#" onclick="docs.loadPage(3)" name="views/Css/global-setting.html">1.CSS全局样式设置</a></li>
+                            <li><a href="#">2.getExtent</a></li>
+                            <li><a href="#">3.getRadius</a></li>
+                            <li><a href="#">4.setCenter</a></li>
+                            <li><a href="#">5.setCenterAndRadius</a></li>
+                            <li><a href="#">6.setRadius</a></li>
+                            <li><a href="#">7.setSpatialReference</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#">Bootstrap</a>
+                    <button type="button" class="toggle-subnav btn btn-link">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                    <div class="hidden" id="bs_div">
+                        <ul class="inner">
+                            <li><a href="/bs">1.getCenter</a></li>
+                            <li><a href="/bs">2.getExtent</a></li>
+                            <li><a href="/bs">3.getRadius</a></li>
+                            <li><a href="/bs">4.setCenter</a></li>
+                            <li><a href="/bs">5.setCenterAndRadius</a></li>
+                            <li><a href="/bs">6.setRadius</a></li>
+                            <li><a href="/bs">7.setSpatialReference</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#">Echarts</a>
+                    <button type="button" class="toggle-subnav btn btn-link">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                    <div class="hidden" id="echarts_div">
+                        <ul class="inner">
+                            <li><a href="/charts">1.getCenter</a></li>
+                            <li><a href="/charts">2.getExtent</a></li>
+                            <li><a href="/charts">3.getRadius</a></li>
+                            <li><a href="/charts">4.setCenter</a></li>
+                            <li><a href="/charts">5.setCenterAndRadius</a></li>
+                            <li><a href="/charts">6.setRadius</a></li>
+                            <li><a href="/charts">7.setSpatialReference</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#">Jquery</a>
+                    <button type="button" class="toggle-subnav btn btn-link">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                    <div class="hidden" id="jq_div">
+                        <ul class="inner">
+                            <li><a href="/jq">1.getCenter</a></li>
+                            <li><a href="/jq">2.getExtent</a></li>
+                            <li><a href="/jq">3.getRadius</a></li>
+                            <li><a href="/jq">4.setCenter</a></li>
+                            <li><a href="/jq">5.setCenterAndRadius</a></li>
+                            <li><a href="/jq">6.setRadius</a></li>
+                            <li><a href="/jq">7.setSpatialReference</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="navExample" class="nav-example hidden">
+            <h3>示例</h3>
+            <ul>
+                <li><a href="#" onclick="docs.loadPage(1)">1.初始化openlayer3</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="drawCircle_sub"></div>
+                </li>
+                <li><a href="tutorial-Map-Animate.html">添加一个闪烁点</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="Map-Animate_sub"></div>
+                </li>
+                <li><a href="tutorial-Map-center.html">定位地图中心点</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="Map-center_sub"></div>
+                </li>
+                <li><a href="tutorial-map.html">gMap Map</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="map_sub"></div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="resizer"></div>
+    <div class="main" id="main">
+        <section id="section">
+            <article class="readme">
+                <h1>Prettify展示效果</h1>
+                <h3>示例</h3>
+                <pre class="prettyprint source">
+                    <code>
+    &lt;!DOCTYPE html>
+    &lt;html>
+        &lt;head>
+            &lt;title>Tiled OSM Map&lt;/title>
+            &lt;link rel=&quot;stylesheet&quot; href=&quot;gMap.css&quot; type=&quot;text/css&quot;>
+            &lt;script src=&quot;https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL&quot;>&lt;/script>
+            &lt;script src=&quot;gMap.js&quot;>&lt;/script>
+            &lt;style type=&quot;text/css&quot;>
+            .map{
+                width: 100%;
+                height:100%;
+            }
+            &lt;/style>
+        &lt;/head>
+        &lt;body>
+            &lt;div class=&quot;code-html&quot;>
+            &lt;div id=&quot;map&quot; class=&quot;map&quot;>&lt;/div>
+            &lt;/div>
+            &lt;script class=&quot;code-js&quot;>
+            var map = new ol.Map({
+                layers: [
+                    new ol.layer.Tile({
+                    source: new ol.source.OSM()
+                    })
+                ],
+                target: 'map',
+                view: new ol.View({
+                    center: [0, 0],
+                    zoom: 2
+                })
+                });
+            &lt;/script>
+        &lt;/body>
+    &lt;/html>
+                    </code>
+                </pre>
+            </article>
+        </section>
+    </div>
+    <footer>版权归北京国科恒通科技股份有限公司所有</footer>
+    <script>
+        prettyPrint();
+    </script>
+    <script src="javascripts/jquery.min.js"></script>
+    <script src="javascripts/doc.js"></script>
+    <script src="javascripts/linenumber.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1984 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Class: Font | Webgis API</title>
+
+    <script src="scripts/prettify/prettify.js">
+    </script>
+    <script src="scripts/prettify/lang-css.js">
+    </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-jsdoc.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/tui-doc.css">
+
+
+</head>
+
+<body>
+    <nav class="lnb" id="lnb">
+        <div class="logo" style="width: 110px">
+
+            <a href="./logo.jpg" rel="noopener noreferrer" target="_blank">
+                <img src="img/toast-ui.png" width="100%" height="100%">
+            </a>
+
+        </div>
+        <div class="title">
+            <h1><a href="index.html" class="link">Webgis API</a></h1>
+
+            <span class="version">v1.0.0</span>
+
+        </div>
+        <div class="search-container" id="search-container">
+            <input type="text" placeholder="Search">
+            <ul></ul>
+        </div>
+
+        <ol class="lnb-tab">
+            <li id="api-tab">
+                <a href="#">
+                    <h4>API</h4>
+                </a>
+            </li>
+            <li id="examples-tab">
+                <a href="#">
+                    <h4>示例</h4>
+                </a>
+            </li>
+        </ol>
+
+        <div class="lnb-examples hidden">
+            <h3>示例</h3>
+            <ul>
+                <li><a href="tutorial-drawCircle.html">画圆</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="drawCircle_sub"></div>
+                </li>
+                <li><a href="tutorial-Map-Animate.html">添加一个闪烁点</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="Map-Animate_sub"></div>
+                </li>
+                <li><a href="tutorial-Map-center.html">定位地图中心点</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="Map-center_sub"></div>
+                </li>
+                <li><a href="tutorial-map.html">gMap Map</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="map_sub"></div>
+                </li>
+                <li><a href="tutorial-PGWMS-geoserver.html">连接geoserverWMS服务</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="PGWMS-geoserver_sub"></div>
+                </li>
+                <li><a href="tutorial-PGWMS-gis.html">连接空间信息服务</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="PGWMS-gis_sub"></div>
+                </li>
+                <li><a href="tutorial-wfs-FindTask.html">FindTask服务</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="wfs-FindTask_sub"></div>
+                </li>
+                <li><a href="tutorial-wfs-IdentityTask.html">IdentityTask服务</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="wfs-IdentityTask_sub"></div>
+                </li>
+                <li><a href="tutorial-wfs-TemporalIdentifyTask.html">TemporalIdentifyTask服务</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="wfs-TemporalIdentifyTask_sub"></div>
+                </li>
+                <li><a href="tutorial-wfs-TemporalQueryTask.html">TemporalQueryTask服务</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="wfs-TemporalQueryTask_sub"></div>
+                </li>
+                <li><a href="tutorial-wfs.html">连接wfs服务</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="wfs_sub"></div>
+                </li>
+                <li><a href="tutorial-wfsCQLtest.html">CQL示例</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="wfsCQLtest_sub"></div>
+                </li>
+                <li><a href="tutorial-wmts.html">连接WMTS服务</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="wmts_sub"></div>
+                </li>
+            </ul>
+        </div>
+        <div class="lnb-api hidden">
+            <h3>Classes</h3>
+            <ul>
+                <li><a href="Font.html">Font</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="Font_sub">
+                        <div class="member-type">Methods</div>
+                        <ul class="inner">
+                            <li><a href="Font.html#setFamily">setFamily</a></li>
+                            <li><a href="Font.html#setSize">setSize</a></li>
+                            <li><a href="Font.html#setStyle">setStyle</a></li>
+                            <li><a href="Font.html#setVariant">setVariant</a></li>
+                            <li><a href="Font.html#setWeight">setWeight</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.geometry.Circle.html">Circle</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.geometry.Circle_sub">
+                        <div class="member-type">Methods</div>
+                        <ul class="inner">
+                            <li><a href="gMap.geometry.Circle.html#getCenter">getCenter</a></li>
+                            <li><a href="gMap.geometry.Circle.html#getExtent">getExtent</a></li>
+                            <li><a href="gMap.geometry.Circle.html#getRadius">getRadius</a></li>
+                            <li><a href="gMap.geometry.Circle.html#setCenter">setCenter</a></li>
+                            <li><a href="gMap.geometry.Circle.html#setCenterAndRadius">setCenterAndRadius</a></li>
+                            <li><a href="gMap.geometry.Circle.html#setRadius">setRadius</a></li>
+                            <li><a href="gMap.geometry.Circle.html#setSpatialReference">setSpatialReference</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.geometry.Extent.html">Extent</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.geometry.Extent_sub">
+                        <div class="member-type">Methods</div>
+                        <ul class="inner">
+                            <li><a href="gMap.geometry.Extent.html#contains">contains</a></li>
+                            <li><a href="gMap.geometry.Extent.html#expand">expand</a></li>
+                            <li><a href="gMap.geometry.Extent.html#getCenter">getCenter</a></li>
+                            <li><a href="gMap.geometry.Extent.html#getHeight">getHeight</a></li>
+                            <li><a href="gMap.geometry.Extent.html#getWidth">getWidth</a></li>
+                            <li><a href="gMap.geometry.Extent.html#setSpatialReference">setSpatialReference</a></li>
+                            <li><a href="gMap.geometry.Extent.html#union">union</a></li>
+                            <li><a href="gMap.geometry.Extent.html#update">update</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.geometry.Geometry.html">Geometry</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.geometry.Geometry_sub">
+                        <div class="member-type">Methods</div>
+                        <ul class="inner">
+                            <li><a href="gMap.geometry.Geometry.html#setSpatialReference">setSpatialReference</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.geometry.Point.html">Point</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.geometry.Point_sub">
+                        <div class="member-type">Methods</div>
+                        <ul class="inner">
+                            <li><a href="gMap.geometry.Point.html#clone">clone</a></li>
+                            <li><a href="gMap.geometry.Point.html#getCoordinates">getCoordinates</a></li>
+                            <li><a href="gMap.geometry.Point.html#getLatitude">getLatitude</a></li>
+                            <li><a href="gMap.geometry.Point.html#getLongitude">getLongitude</a></li>
+                            <li><a href="gMap.geometry.Point.html#intersectsExtent">intersectsExtent</a></li>
+                            <li><a href="gMap.geometry.Point.html#offset">offset</a></li>
+                            <li><a href="gMap.geometry.Point.html#setCoordinates">setCoordinates</a></li>
+                            <li><a href="gMap.geometry.Point.html#setLatitude">setLatitude</a></li>
+                            <li><a href="gMap.geometry.Point.html#setLongitude">setLongitude</a></li>
+                            <li><a href="gMap.geometry.Point.html#setSpatialReference">setSpatialReference</a></li>
+                            <li><a href="gMap.geometry.Point.html#update">update</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.geometry.Polygon.html">Polygon</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.geometry.Polygon_sub">
+                        <div class="member-type">Methods</div>
+                        <ul class="inner">
+                            <li><a href="gMap.geometry.Polygon.html#addRing">addRing</a></li>
+                            <li><a href="gMap.geometry.Polygon.html#contains">contains</a></li>
+                            <li><a href="gMap.geometry.Polygon.html#getPoint">getPoint</a></li>
+                            <li><a href="gMap.geometry.Polygon.html#insertPoint">insertPoint</a></li>
+                            <li><a href="gMap.geometry.Polygon.html#removePoint">removePoint</a></li>
+                            <li><a href="gMap.geometry.Polygon.html#removeRing">removeRing</a></li>
+                            <li><a href="gMap.geometry.Polygon.html#setPoint">setPoint</a></li>
+                            <li><a href="gMap.geometry.Polygon.html#setSpatialReference">setSpatialReference</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.geometry.Polyline.html">Polyline</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.geometry.Polyline_sub">
+                        <div class="member-type">Methods</div>
+                        <ul class="inner">
+                            <li><a href="gMap.geometry.Polyline.html#addPath">addPath</a></li>
+                            <li><a href="gMap.geometry.Polyline.html#getExtent">getExtent</a></li>
+                            <li><a href="gMap.geometry.Polyline.html#getPoint">getPoint</a></li>
+                            <li><a href="gMap.geometry.Polyline.html#insertPoint">insertPoint</a></li>
+                            <li><a href="gMap.geometry.Polyline.html#removePath">removePath</a></li>
+                            <li><a href="gMap.geometry.Polyline.html#removePoint">removePoint</a></li>
+                            <li><a href="gMap.geometry.Polyline.html#setPoint">setPoint</a></li>
+                            <li><a href="gMap.geometry.Polyline.html#setSpatialReference">setSpatialReference</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.Graphic.html">Graphic</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.Graphic_sub">
+                        <div class="member-type">Methods</div>
+                        <ul class="inner">
+                            <li><a href="gMap.Graphic.html#attr">attr</a></li>
+                            <li><a href="gMap.Graphic.html#setAttributes">setAttributes</a></li>
+                            <li><a href="gMap.Graphic.html#setGeometry">setGeometry</a></li>
+                            <li><a href="gMap.Graphic.html#setSymbol">setSymbol</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.layers.ArcGISImageMapServiceLayer.html">ArcGISImageMapServiceLayer</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.layers.ArcGISImageMapServiceLayer_sub">
+                        <div class="member-type">Methods</div>
+                        <ul class="inner">
+                            <li><a href="gMap.layers.ArcGISImageMapServiceLayer.html#getAttributions">getAttributions</a></li>
+                            <li><a href="gMap.layers.ArcGISImageMapServiceLayer.html#getMaxScale">getMaxScale</a></li>
+                            <li><a href="gMap.layers.ArcGISImageMapServiceLayer.html#getMinScale">getMinScale</a></li>
+                            <li><a href="gMap.layers.ArcGISImageMapServiceLayer.html#getOpacity">getOpacity</a></li>
+                            <li><a href="gMap.layers.ArcGISImageMapServiceLayer.html#getVisibility">getVisibility</a></li>
+                            <li><a href="gMap.layers.ArcGISImageMapServiceLayer.html#hide">hide</a></li>
+                            <li><a href="gMap.layers.ArcGISImageMapServiceLayer.html#isVisibleAtScale">isVisibleAtScale</a></li>
+                            <li><a href="gMap.layers.ArcGISImageMapServiceLayer.html#refresh">refresh</a></li>
+                            <li><a href="gMap.layers.ArcGISImageMapServiceLayer.html#setMaxScale">setMaxScale</a></li>
+                            <li><a href="gMap.layers.ArcGISImageMapServiceLayer.html#setMinScale">setMinScale</a></li>
+                            <li><a href="gMap.layers.ArcGISImageMapServiceLayer.html#setOpacity">setOpacity</a></li>
+                            <li><a href="gMap.layers.ArcGISImageMapServiceLayer.html#setScaleRange">setScaleRange</a></li>
+                            <li><a href="gMap.layers.ArcGISImageMapServiceLayer.html#setVisibility">setVisibility</a></li>
+                            <li><a href="gMap.layers.ArcGISImageMapServiceLayer.html#show">show</a></li>
+                        </ul>
+                        <div class="member-type">Typedef</div>
+                        <ul class="inner">
+                            <li><a href="gMap.layers.ArcGISImageMapServiceLayer.html#.LayerOptions">LayerOptions</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.layers.ArcGISTileMapServiceLayer.html">ArcGISTileMapServiceLayer</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.layers.ArcGISTileMapServiceLayer_sub">
+                        <div class="member-type">Methods</div>
+                        <ul class="inner">
+                            <li><a href="gMap.layers.ArcGISTileMapServiceLayer.html#getAttributions">getAttributions</a></li>
+                            <li><a href="gMap.layers.ArcGISTileMapServiceLayer.html#getMaxScale">getMaxScale</a></li>
+                            <li><a href="gMap.layers.ArcGISTileMapServiceLayer.html#getMinScale">getMinScale</a></li>
+                            <li><a href="gMap.layers.ArcGISTileMapServiceLayer.html#getOpacity">getOpacity</a></li>
+                            <li><a href="gMap.layers.ArcGISTileMapServiceLayer.html#getUrl">getUrl</a></li>
+                            <li><a href="gMap.layers.ArcGISTileMapServiceLayer.html#getVisibility">getVisibility</a></li>
+                            <li><a href="gMap.layers.ArcGISTileMapServiceLayer.html#hide">hide</a></li>
+                            <li><a href="gMap.layers.ArcGISTileMapServiceLayer.html#isVisibleAtScale">isVisibleAtScale</a></li>
+                            <li><a href="gMap.layers.ArcGISTileMapServiceLayer.html#refresh">refresh</a></li>
+                            <li><a href="gMap.layers.ArcGISTileMapServiceLayer.html#setMaxScale">setMaxScale</a></li>
+                            <li><a href="gMap.layers.ArcGISTileMapServiceLayer.html#setMinScale">setMinScale</a></li>
+                            <li><a href="gMap.layers.ArcGISTileMapServiceLayer.html#setOpacity">setOpacity</a></li>
+                            <li><a href="gMap.layers.ArcGISTileMapServiceLayer.html#setScaleRange">setScaleRange</a></li>
+                            <li><a href="gMap.layers.ArcGISTileMapServiceLayer.html#setUrl">setUrl</a></li>
+                            <li><a href="gMap.layers.ArcGISTileMapServiceLayer.html#setVisibility">setVisibility</a></li>
+                            <li><a href="gMap.layers.ArcGISTileMapServiceLayer.html#show">show</a></li>
+                        </ul>
+                        <div class="member-type">Typedef</div>
+                        <ul class="inner">
+                            <li><a href="gMap.layers.ArcGISTileMapServiceLayer.html#.LayerOptions">LayerOptions</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.layers.GraphicLayer.html">GraphicLayer</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.layers.GraphicLayer_sub">
+                        <div class="member-type">Methods</div>
+                        <ul class="inner">
+                            <li><a href="gMap.layers.GraphicLayer.html#add">add</a></li>
+                            <li><a href="gMap.layers.GraphicLayer.html#clear">clear</a></li>
+                            <li><a href="gMap.layers.GraphicLayer.html#getMaxScale">getMaxScale</a></li>
+                            <li><a href="gMap.layers.GraphicLayer.html#getMinScale">getMinScale</a></li>
+                            <li><a href="gMap.layers.GraphicLayer.html#getOpacity">getOpacity</a></li>
+                            <li><a href="gMap.layers.GraphicLayer.html#getVisibility">getVisibility</a></li>
+                            <li><a href="gMap.layers.GraphicLayer.html#hide">hide</a></li>
+                            <li><a href="gMap.layers.GraphicLayer.html#isVisibleAtResolution">isVisibleAtResolution</a></li>
+                            <li><a href="gMap.layers.GraphicLayer.html#isVisibleAtScale">isVisibleAtScale</a></li>
+                            <li><a href="gMap.layers.GraphicLayer.html#redraw">redraw</a></li>
+                            <li><a href="gMap.layers.GraphicLayer.html#remove">remove</a></li>
+                            <li><a href="gMap.layers.GraphicLayer.html#setMaxResolution">setMaxResolution</a></li>
+                            <li><a href="gMap.layers.GraphicLayer.html#setMaxScale">setMaxScale</a></li>
+                            <li><a href="gMap.layers.GraphicLayer.html#setMinResolution">setMinResolution</a></li>
+                            <li><a href="gMap.layers.GraphicLayer.html#setMinScale">setMinScale</a></li>
+                            <li><a href="gMap.layers.GraphicLayer.html#setOpacity">setOpacity</a></li>
+                            <li><a href="gMap.layers.GraphicLayer.html#setScaleRange">setScaleRange</a></li>
+                            <li><a href="gMap.layers.GraphicLayer.html#setVisibility">setVisibility</a></li>
+                            <li><a href="gMap.layers.GraphicLayer.html#show">show</a></li>
+                        </ul>
+                        <div class="member-type">Typedef</div>
+                        <ul class="inner">
+                            <li><a href="gMap.layers.GraphicLayer.html#.LayerOptions">LayerOptions</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.layers.ImageLayer.html">ImageLayer</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.layers.ImageLayer_sub">
+                        <div class="member-type">Methods</div>
+                        <ul class="inner">
+                            <li><a href="gMap.layers.ImageLayer.html#getAttributions">getAttributions</a></li>
+                            <li><a href="gMap.layers.ImageLayer.html#getMaxScale">getMaxScale</a></li>
+                            <li><a href="gMap.layers.ImageLayer.html#getMinScale">getMinScale</a></li>
+                            <li><a href="gMap.layers.ImageLayer.html#getOpacity">getOpacity</a></li>
+                            <li><a href="gMap.layers.ImageLayer.html#getVisibility">getVisibility</a></li>
+                            <li><a href="gMap.layers.ImageLayer.html#hide">hide</a></li>
+                            <li><a href="gMap.layers.ImageLayer.html#isVisibleAtScale">isVisibleAtScale</a></li>
+                            <li><a href="gMap.layers.ImageLayer.html#refresh">refresh</a></li>
+                            <li><a href="gMap.layers.ImageLayer.html#setMaxScale">setMaxScale</a></li>
+                            <li><a href="gMap.layers.ImageLayer.html#setMinScale">setMinScale</a></li>
+                            <li><a href="gMap.layers.ImageLayer.html#setOpacity">setOpacity</a></li>
+                            <li><a href="gMap.layers.ImageLayer.html#setScaleRange">setScaleRange</a></li>
+                            <li><a href="gMap.layers.ImageLayer.html#setVisibility">setVisibility</a></li>
+                            <li><a href="gMap.layers.ImageLayer.html#show">show</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.layers.Layer.html">Layer</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.layers.Layer_sub">
+                        <div class="member-type">Methods</div>
+                        <ul class="inner">
+                            <li><a href="gMap.layers.Layer.html#getMaxScale">getMaxScale</a></li>
+                            <li><a href="gMap.layers.Layer.html#getMinScale">getMinScale</a></li>
+                            <li><a href="gMap.layers.Layer.html#getOpacity">getOpacity</a></li>
+                            <li><a href="gMap.layers.Layer.html#getVisibility">getVisibility</a></li>
+                            <li><a href="gMap.layers.Layer.html#hide">hide</a></li>
+                            <li><a href="gMap.layers.Layer.html#isVisibleAtScale">isVisibleAtScale</a></li>
+                            <li><a href="gMap.layers.Layer.html#setMaxScale">setMaxScale</a></li>
+                            <li><a href="gMap.layers.Layer.html#setMinScale">setMinScale</a></li>
+                            <li><a href="gMap.layers.Layer.html#setOpacity">setOpacity</a></li>
+                            <li><a href="gMap.layers.Layer.html#setScaleRange">setScaleRange</a></li>
+                            <li><a href="gMap.layers.Layer.html#setVisibility">setVisibility</a></li>
+                            <li><a href="gMap.layers.Layer.html#show">show</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.layers.OSMLayer.html">OSMLayer</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.layers.OSMLayer_sub">
+                        <div class="member-type">Methods</div>
+                        <ul class="inner">
+                            <li><a href="gMap.layers.OSMLayer.html#getMaxScale">getMaxScale</a></li>
+                            <li><a href="gMap.layers.OSMLayer.html#getMinScale">getMinScale</a></li>
+                            <li><a href="gMap.layers.OSMLayer.html#getOpacity">getOpacity</a></li>
+                            <li><a href="gMap.layers.OSMLayer.html#getVisibility">getVisibility</a></li>
+                            <li><a href="gMap.layers.OSMLayer.html#hide">hide</a></li>
+                            <li><a href="gMap.layers.OSMLayer.html#isVisibleAtScale">isVisibleAtScale</a></li>
+                            <li><a href="gMap.layers.OSMLayer.html#setMaxScale">setMaxScale</a></li>
+                            <li><a href="gMap.layers.OSMLayer.html#setMinScale">setMinScale</a></li>
+                            <li><a href="gMap.layers.OSMLayer.html#setOpacity">setOpacity</a></li>
+                            <li><a href="gMap.layers.OSMLayer.html#setScaleRange">setScaleRange</a></li>
+                            <li><a href="gMap.layers.OSMLayer.html#setVisibility">setVisibility</a></li>
+                            <li><a href="gMap.layers.OSMLayer.html#show">show</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.layers.PGTemporaryLayer.html">PGTemporaryLayer</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.layers.PGTemporaryLayer_sub">
+                        <div class="member-type">Methods</div>
+                        <ul class="inner">
+                            <li><a href="gMap.layers.PGTemporaryLayer.html#getUrl">getUrl</a></li>
+                            <li><a href="gMap.layers.PGTemporaryLayer.html#setUrl">setUrl</a></li>
+                            <li><a href="gMap.layers.PGTemporaryLayer.html#updateParams">updateParams</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.layers.TileImageLayer.html">TileImageLayer</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.layers.TileImageLayer_sub">
+                        <div class="member-type">Methods</div>
+                        <ul class="inner">
+                            <li><a href="gMap.layers.TileImageLayer.html#getAttributions">getAttributions</a></li>
+                            <li><a href="gMap.layers.TileImageLayer.html#getMaxScale">getMaxScale</a></li>
+                            <li><a href="gMap.layers.TileImageLayer.html#getMinScale">getMinScale</a></li>
+                            <li><a href="gMap.layers.TileImageLayer.html#getOpacity">getOpacity</a></li>
+                            <li><a href="gMap.layers.TileImageLayer.html#getUrl">getUrl</a></li>
+                            <li><a href="gMap.layers.TileImageLayer.html#getVisibility">getVisibility</a></li>
+                            <li><a href="gMap.layers.TileImageLayer.html#hide">hide</a></li>
+                            <li><a href="gMap.layers.TileImageLayer.html#isVisibleAtScale">isVisibleAtScale</a></li>
+                            <li><a href="gMap.layers.TileImageLayer.html#refresh">refresh</a></li>
+                            <li><a href="gMap.layers.TileImageLayer.html#setMaxScale">setMaxScale</a></li>
+                            <li><a href="gMap.layers.TileImageLayer.html#setMinScale">setMinScale</a></li>
+                            <li><a href="gMap.layers.TileImageLayer.html#setOpacity">setOpacity</a></li>
+                            <li><a href="gMap.layers.TileImageLayer.html#setScaleRange">setScaleRange</a></li>
+                            <li><a href="gMap.layers.TileImageLayer.html#setUrl">setUrl</a></li>
+                            <li><a href="gMap.layers.TileImageLayer.html#setVisibility">setVisibility</a></li>
+                            <li><a href="gMap.layers.TileImageLayer.html#show">show</a></li>
+                        </ul>
+                        <div class="member-type">Typedef</div>
+                        <ul class="inner">
+                            <li><a href="gMap.layers.TileImageLayer.html#.LayerOptions">LayerOptions</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.layers.TileLayer.html">TileLayer</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.layers.TileLayer_sub">
+                        <div class="member-type">Methods</div>
+                        <ul class="inner">
+                            <li><a href="gMap.layers.TileLayer.html#getAttributions">getAttributions</a></li>
+                            <li><a href="gMap.layers.TileLayer.html#getMaxScale">getMaxScale</a></li>
+                            <li><a href="gMap.layers.TileLayer.html#getMinScale">getMinScale</a></li>
+                            <li><a href="gMap.layers.TileLayer.html#getOpacity">getOpacity</a></li>
+                            <li><a href="gMap.layers.TileLayer.html#getVisibility">getVisibility</a></li>
+                            <li><a href="gMap.layers.TileLayer.html#hide">hide</a></li>
+                            <li><a href="gMap.layers.TileLayer.html#isVisibleAtScale">isVisibleAtScale</a></li>
+                            <li><a href="gMap.layers.TileLayer.html#refresh">refresh</a></li>
+                            <li><a href="gMap.layers.TileLayer.html#setMaxScale">setMaxScale</a></li>
+                            <li><a href="gMap.layers.TileLayer.html#setMinScale">setMinScale</a></li>
+                            <li><a href="gMap.layers.TileLayer.html#setOpacity">setOpacity</a></li>
+                            <li><a href="gMap.layers.TileLayer.html#setScaleRange">setScaleRange</a></li>
+                            <li><a href="gMap.layers.TileLayer.html#setVisibility">setVisibility</a></li>
+                            <li><a href="gMap.layers.TileLayer.html#show">show</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.layers.WebTileLayer.html">WebTileLayer</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.layers.WebTileLayer_sub">
+                        <div class="member-type">Methods</div>
+                        <ul class="inner">
+                            <li><a href="gMap.layers.WebTileLayer.html#getAttributions">getAttributions</a></li>
+                            <li><a href="gMap.layers.WebTileLayer.html#getMaxScale">getMaxScale</a></li>
+                            <li><a href="gMap.layers.WebTileLayer.html#getMinScale">getMinScale</a></li>
+                            <li><a href="gMap.layers.WebTileLayer.html#getOpacity">getOpacity</a></li>
+                            <li><a href="gMap.layers.WebTileLayer.html#getUrl">getUrl</a></li>
+                            <li><a href="gMap.layers.WebTileLayer.html#getVisibility">getVisibility</a></li>
+                            <li><a href="gMap.layers.WebTileLayer.html#hide">hide</a></li>
+                            <li><a href="gMap.layers.WebTileLayer.html#isVisibleAtScale">isVisibleAtScale</a></li>
+                            <li><a href="gMap.layers.WebTileLayer.html#refresh">refresh</a></li>
+                            <li><a href="gMap.layers.WebTileLayer.html#setMaxScale">setMaxScale</a></li>
+                            <li><a href="gMap.layers.WebTileLayer.html#setMinScale">setMinScale</a></li>
+                            <li><a href="gMap.layers.WebTileLayer.html#setOpacity">setOpacity</a></li>
+                            <li><a href="gMap.layers.WebTileLayer.html#setScaleRange">setScaleRange</a></li>
+                            <li><a href="gMap.layers.WebTileLayer.html#setUrl">setUrl</a></li>
+                            <li><a href="gMap.layers.WebTileLayer.html#setVisibility">setVisibility</a></li>
+                            <li><a href="gMap.layers.WebTileLayer.html#show">show</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.layers.WMSImageLayer.html">WMSImageLayer</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.layers.WMSImageLayer_sub">
+                        <div class="member-type">Methods</div>
+                        <ul class="inner">
+                            <li><a href="gMap.layers.WMSImageLayer.html#getAttributions">getAttributions</a></li>
+                            <li><a href="gMap.layers.WMSImageLayer.html#getMaxScale">getMaxScale</a></li>
+                            <li><a href="gMap.layers.WMSImageLayer.html#getMinScale">getMinScale</a></li>
+                            <li><a href="gMap.layers.WMSImageLayer.html#getOpacity">getOpacity</a></li>
+                            <li><a href="gMap.layers.WMSImageLayer.html#getUrl">getUrl</a></li>
+                            <li><a href="gMap.layers.WMSImageLayer.html#getVisibility">getVisibility</a></li>
+                            <li><a href="gMap.layers.WMSImageLayer.html#hide">hide</a></li>
+                            <li><a href="gMap.layers.WMSImageLayer.html#isVisibleAtScale">isVisibleAtScale</a></li>
+                            <li><a href="gMap.layers.WMSImageLayer.html#refresh">refresh</a></li>
+                            <li><a href="gMap.layers.WMSImageLayer.html#setMaxScale">setMaxScale</a></li>
+                            <li><a href="gMap.layers.WMSImageLayer.html#setMinScale">setMinScale</a></li>
+                            <li><a href="gMap.layers.WMSImageLayer.html#setOpacity">setOpacity</a></li>
+                            <li><a href="gMap.layers.WMSImageLayer.html#setScaleRange">setScaleRange</a></li>
+                            <li><a href="gMap.layers.WMSImageLayer.html#setUrl">setUrl</a></li>
+                            <li><a href="gMap.layers.WMSImageLayer.html#setVisibility">setVisibility</a></li>
+                            <li><a href="gMap.layers.WMSImageLayer.html#show">show</a></li>
+                            <li><a href="gMap.layers.WMSImageLayer.html#updateParams">updateParams</a></li>
+                        </ul>
+                        <div class="member-type">Typedef</div>
+                        <ul class="inner">
+                            <li><a href="gMap.layers.WMSImageLayer.html#.LayerOptions">LayerOptions</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.layers.WMSTileLayer.html">WMSTileLayer</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.layers.WMSTileLayer_sub">
+                        <div class="member-type">Methods</div>
+                        <ul class="inner">
+                            <li><a href="gMap.layers.WMSTileLayer.html#getAttributions">getAttributions</a></li>
+                            <li><a href="gMap.layers.WMSTileLayer.html#getMaxScale">getMaxScale</a></li>
+                            <li><a href="gMap.layers.WMSTileLayer.html#getMinScale">getMinScale</a></li>
+                            <li><a href="gMap.layers.WMSTileLayer.html#getOpacity">getOpacity</a></li>
+                            <li><a href="gMap.layers.WMSTileLayer.html#getUrl">getUrl</a></li>
+                            <li><a href="gMap.layers.WMSTileLayer.html#getVisibility">getVisibility</a></li>
+                            <li><a href="gMap.layers.WMSTileLayer.html#hide">hide</a></li>
+                            <li><a href="gMap.layers.WMSTileLayer.html#isVisibleAtScale">isVisibleAtScale</a></li>
+                            <li><a href="gMap.layers.WMSTileLayer.html#refresh">refresh</a></li>
+                            <li><a href="gMap.layers.WMSTileLayer.html#setMaxScale">setMaxScale</a></li>
+                            <li><a href="gMap.layers.WMSTileLayer.html#setMinScale">setMinScale</a></li>
+                            <li><a href="gMap.layers.WMSTileLayer.html#setOpacity">setOpacity</a></li>
+                            <li><a href="gMap.layers.WMSTileLayer.html#setScaleRange">setScaleRange</a></li>
+                            <li><a href="gMap.layers.WMSTileLayer.html#setUrl">setUrl</a></li>
+                            <li><a href="gMap.layers.WMSTileLayer.html#setVisibility">setVisibility</a></li>
+                            <li><a href="gMap.layers.WMSTileLayer.html#show">show</a></li>
+                            <li><a href="gMap.layers.WMSTileLayer.html#updateParams">updateParams</a></li>
+                        </ul>
+                        <div class="member-type">Typedef</div>
+                        <ul class="inner">
+                            <li><a href="gMap.layers.WMSTileLayer.html#.LayerOptions">LayerOptions</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.layers.WMTSLayer.html">WMTSLayer</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.layers.WMTSLayer_sub">
+                        <div class="member-type">Methods</div>
+                        <ul class="inner">
+                            <li><a href="gMap.layers.WMTSLayer.html#getAttributions">getAttributions</a></li>
+                            <li><a href="gMap.layers.WMTSLayer.html#getFormat">getFormat</a></li>
+                            <li><a href="gMap.layers.WMTSLayer.html#getLayer">getLayer</a></li>
+                            <li><a href="gMap.layers.WMTSLayer.html#getMaxScale">getMaxScale</a></li>
+                            <li><a href="gMap.layers.WMTSLayer.html#getMinScale">getMinScale</a></li>
+                            <li><a href="gMap.layers.WMTSLayer.html#getOpacity">getOpacity</a></li>
+                            <li><a href="gMap.layers.WMTSLayer.html#getStyle">getStyle</a></li>
+                            <li><a href="gMap.layers.WMTSLayer.html#getUrl">getUrl</a></li>
+                            <li><a href="gMap.layers.WMTSLayer.html#getVisibility">getVisibility</a></li>
+                            <li><a href="gMap.layers.WMTSLayer.html#hide">hide</a></li>
+                            <li><a href="gMap.layers.WMTSLayer.html#isVisibleAtScale">isVisibleAtScale</a></li>
+                            <li><a href="gMap.layers.WMTSLayer.html#refresh">refresh</a></li>
+                            <li><a href="gMap.layers.WMTSLayer.html#setMaxScale">setMaxScale</a></li>
+                            <li><a href="gMap.layers.WMTSLayer.html#setMinScale">setMinScale</a></li>
+                            <li><a href="gMap.layers.WMTSLayer.html#setOpacity">setOpacity</a></li>
+                            <li><a href="gMap.layers.WMTSLayer.html#setScaleRange">setScaleRange</a></li>
+                            <li><a href="gMap.layers.WMTSLayer.html#setUrl">setUrl</a></li>
+                            <li><a href="gMap.layers.WMTSLayer.html#setVisibility">setVisibility</a></li>
+                            <li><a href="gMap.layers.WMTSLayer.html#show">show</a></li>
+                        </ul>
+                        <div class="member-type">Typedef</div>
+                        <ul class="inner">
+                            <li><a href="gMap.layers.WMTSLayer.html#.LayerOptions">LayerOptions</a></li>
+                            <li><a href="gMap.layers.WMTSLayer.html#.resourceInfo">resourceInfo</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.Map.html">Map</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.Map_sub">
+                        <div class="member-type">Methods</div>
+                        <ul class="inner">
+                            <li><a href="gMap.Map.html#addLayer">addLayer</a></li>
+                            <li><a href="gMap.Map.html#addLayers">addLayers</a></li>
+                            <li><a href="gMap.Map.html#centerAndZoom">centerAndZoom</a></li>
+                            <li><a href="gMap.Map.html#centerAt">centerAt</a></li>
+                            <li><a href="gMap.Map.html#destroy">destroy</a></li>
+                            <li><a href="gMap.Map.html#getCenter">getCenter</a></li>
+                            <li><a href="gMap.Map.html#getLayer">getLayer</a></li>
+                            <li><a href="gMap.Map.html#getLayersVisibleAtScale">getLayersVisibleAtScale</a></li>
+                            <li><a href="gMap.Map.html#getMaxScale">getMaxScale</a></li>
+                            <li><a href="gMap.Map.html#getMaxZoom">getMaxZoom</a></li>
+                            <li><a href="gMap.Map.html#getMinScale">getMinScale</a></li>
+                            <li><a href="gMap.Map.html#getMinZoom">getMinZoom</a></li>
+                            <li><a href="gMap.Map.html#getScale">getScale</a></li>
+                            <li><a href="gMap.Map.html#getZoom">getZoom</a></li>
+                            <li><a href="gMap.Map.html#removeAllLayers">removeAllLayers</a></li>
+                            <li><a href="gMap.Map.html#removeLayer">removeLayer</a></li>
+                            <li><a href="gMap.Map.html#setExtent">setExtent</a></li>
+                            <li><a href="gMap.Map.html#setScale">setScale</a></li>
+                            <li><a href="gMap.Map.html#setZoom">setZoom</a></li>
+                            <li><a href="gMap.Map.html#toMap">toMap</a></li>
+                            <li><a href="gMap.Map.html#toScreen">toScreen</a></li>
+                        </ul>
+                        <div class="member-type">Typedef</div>
+                        <ul class="inner">
+                            <li><a href="gMap.Map.html#.MapOptions">MapOptions</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.symbols.CartographicLineSymbol.html">CartographicLineSymbol</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.symbols.CartographicLineSymbol_sub">
+                        <div class="member-type">Members</div>
+                        <ul class="inner">
+                            <li><a href="gMap.symbols.CartographicLineSymbol.html#.CartographicLineSymbol.CAP_BUTT">CartographicLineSymbol.CAP_BUTT</a></li>
+                            <li><a href="gMap.symbols.CartographicLineSymbol.html#.CartographicLineSymbol.CAP_ROUND">CartographicLineSymbol.CAP_ROUND</a></li>
+                            <li><a href="gMap.symbols.CartographicLineSymbol.html#.CartographicLineSymbol.CAP_SQUARE">CartographicLineSymbol.CAP_SQUARE</a></li>
+                            <li><a href="gMap.symbols.CartographicLineSymbol.html#.CartographicLineSymbol.JOIN_BEVEL">CartographicLineSymbol.JOIN_BEVEL</a></li>
+                            <li><a href="gMap.symbols.CartographicLineSymbol.html#.CartographicLineSymbol.JOIN_MITER">CartographicLineSymbol.JOIN_MITER</a></li>
+                            <li><a href="gMap.symbols.CartographicLineSymbol.html#.CartographicLineSymbol.JOIN_ROUND">CartographicLineSymbol.JOIN_ROUND</a></li>
+                            <li><a href="gMap.symbols.CartographicLineSymbol.html#.CartographicLineSymbol.STYLE_DASH">CartographicLineSymbol.STYLE_DASH</a></li>
+                            <li><a href="gMap.symbols.CartographicLineSymbol.html#.CartographicLineSymbol.STYLE_DASHDOT">CartographicLineSymbol.STYLE_DASHDOT</a></li>
+                            <li><a href="gMap.symbols.CartographicLineSymbol.html#.CartographicLineSymbol.STYLE_DASHDOTDOT">CartographicLineSymbol.STYLE_DASHDOTDOT</a></li>
+                            <li><a href="gMap.symbols.CartographicLineSymbol.html#.CartographicLineSymbol.STYLE_DOT">CartographicLineSymbol.STYLE_DOT</a></li>
+                            <li><a href="gMap.symbols.CartographicLineSymbol.html#.CartographicLineSymbol.STYLE_LONGDASH">CartographicLineSymbol.STYLE_LONGDASH</a></li>
+                            <li><a href="gMap.symbols.CartographicLineSymbol.html#.CartographicLineSymbol.STYLE_LONGDASHDOT">CartographicLineSymbol.STYLE_LONGDASHDOT</a></li>
+                            <li><a href="gMap.symbols.CartographicLineSymbol.html#.CartographicLineSymbol.STYLE_NULL">CartographicLineSymbol.STYLE_NULL</a></li>
+                            <li><a href="gMap.symbols.CartographicLineSymbol.html#.CartographicLineSymbol.STYLE_SHORTDASH">CartographicLineSymbol.STYLE_SHORTDASH</a></li>
+                            <li><a href="gMap.symbols.CartographicLineSymbol.html#.CartographicLineSymbol.STYLE_SHORTDASHDOT">CartographicLineSymbol.STYLE_SHORTDASHDOT</a></li>
+                            <li><a href="gMap.symbols.CartographicLineSymbol.html#.CartographicLineSymbol.STYLE_SHORTDASHDOTDOT">CartographicLineSymbol.STYLE_SHORTDASHDOTDOT</a></li>
+                            <li><a href="gMap.symbols.CartographicLineSymbol.html#.CartographicLineSymbol.STYLE_SHORTDOT">CartographicLineSymbol.STYLE_SHORTDOT</a></li>
+                            <li><a href="gMap.symbols.CartographicLineSymbol.html#.CartographicLineSymbol.STYLE_SOLID">CartographicLineSymbol.STYLE_SOLID</a></li>
+                        </ul>
+                        <div class="member-type">Methods</div>
+                        <ul class="inner">
+                            <li><a href="gMap.symbols.CartographicLineSymbol.html#setCap">setCap</a></li>
+                            <li><a href="gMap.symbols.CartographicLineSymbol.html#setColor">setColor</a></li>
+                            <li><a href="gMap.symbols.CartographicLineSymbol.html#setJoin">setJoin</a></li>
+                            <li><a href="gMap.symbols.CartographicLineSymbol.html#setMiterLimit">setMiterLimit</a></li>
+                            <li><a href="gMap.symbols.CartographicLineSymbol.html#setStyle">setStyle</a></li>
+                            <li><a href="gMap.symbols.CartographicLineSymbol.html#setWidth">setWidth</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.symbols.FillSymbol.html">FillSymbol</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.symbols.FillSymbol_sub">
+                        <div class="member-type">Methods</div>
+                        <ul class="inner">
+                            <li><a href="gMap.symbols.FillSymbol.html#setColor">setColor</a></li>
+                            <li><a href="gMap.symbols.FillSymbol.html#setOutline">setOutline</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.symbols.Font.html">Font</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.symbols.Font_sub">
+                        <div class="member-type">Members</div>
+                        <ul class="inner">
+                            <li><a href="gMap.symbols.Font.html#.Font.STYLE_ITALIC">Font.STYLE_ITALIC</a></li>
+                            <li><a href="gMap.symbols.Font.html#.Font.STYLE_NORMAL">Font.STYLE_NORMAL</a></li>
+                            <li><a href="gMap.symbols.Font.html#.Font.STYLE_OBLIQUE">Font.STYLE_OBLIQUE</a></li>
+                            <li><a href="gMap.symbols.Font.html#.Font.VARIANT_NORMAL">Font.VARIANT_NORMAL</a></li>
+                            <li><a href="gMap.symbols.Font.html#.Font.VARIANT_SMALLCAPS">Font.VARIANT_SMALLCAPS</a></li>
+                            <li><a href="gMap.symbols.Font.html#.Font.WEIGHT_BOLD">Font.WEIGHT_BOLD</a></li>
+                            <li><a href="gMap.symbols.Font.html#.Font.WEIGHT_BOLDER">Font.WEIGHT_BOLDER</a></li>
+                            <li><a href="gMap.symbols.Font.html#.Font.WEIGHT_LIGHTER">Font.WEIGHT_LIGHTER</a></li>
+                            <li><a href="gMap.symbols.Font.html#.Font.WEIGHT_NORMAL">Font.WEIGHT_NORMAL</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.symbols.LineSymbol.html">LineSymbol</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.symbols.LineSymbol_sub">
+                        <div class="member-type">Methods</div>
+                        <ul class="inner">
+                            <li><a href="gMap.symbols.LineSymbol.html#setColor">setColor</a></li>
+                            <li><a href="gMap.symbols.LineSymbol.html#setWidth">setWidth</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.symbols.MarkerSymbol.html">MarkerSymbol</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.symbols.MarkerSymbol_sub">
+                        <div class="member-type">Methods</div>
+                        <ul class="inner">
+                            <li><a href="gMap.symbols.MarkerSymbol.html#setAngle">setAngle</a></li>
+                            <li><a href="gMap.symbols.MarkerSymbol.html#setColor">setColor</a></li>
+                            <li><a href="gMap.symbols.MarkerSymbol.html#setSize">setSize</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.symbols.PictureFillSymbol.html">PictureFillSymbol</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.symbols.PictureFillSymbol_sub">
+                        <div class="member-type">Methods</div>
+                        <ul class="inner">
+                            <li><a href="gMap.symbols.PictureFillSymbol.html#setColor">setColor</a></li>
+                            <li><a href="gMap.symbols.PictureFillSymbol.html#setHeight">setHeight</a></li>
+                            <li><a href="gMap.symbols.PictureFillSymbol.html#setOutline">setOutline</a></li>
+                            <li><a href="gMap.symbols.PictureFillSymbol.html#setUrl">setUrl</a></li>
+                            <li><a href="gMap.symbols.PictureFillSymbol.html#setWidth">setWidth</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.symbols.PictureMarkerSymbol.html">PictureMarkerSymbol</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.symbols.PictureMarkerSymbol_sub">
+                        <div class="member-type">Methods</div>
+                        <ul class="inner">
+                            <li><a href="gMap.symbols.PictureMarkerSymbol.html#setAngle">setAngle</a></li>
+                            <li><a href="gMap.symbols.PictureMarkerSymbol.html#setColor">setColor</a></li>
+                            <li><a href="gMap.symbols.PictureMarkerSymbol.html#setHeight">setHeight</a></li>
+                            <li><a href="gMap.symbols.PictureMarkerSymbol.html#setOffset">setOffset</a></li>
+                            <li><a href="gMap.symbols.PictureMarkerSymbol.html#setSize">setSize</a></li>
+                            <li><a href="gMap.symbols.PictureMarkerSymbol.html#setUrl">setUrl</a></li>
+                            <li><a href="gMap.symbols.PictureMarkerSymbol.html#setWidth">setWidth</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.symbols.SimpleFillSymbol.html">SimpleFillSymbol</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.symbols.SimpleFillSymbol_sub">
+                        <div class="member-type">Members</div>
+                        <ul class="inner">
+                            <li><a href="gMap.symbols.SimpleFillSymbol.html#.SimpleFillSymbol.STYLE_BACKWARD_DIAGONAL">SimpleFillSymbol.STYLE_BACKWARD_DIAGONAL</a></li>
+                            <li><a href="gMap.symbols.SimpleFillSymbol.html#.SimpleFillSymbol.STYLE_CROSS">SimpleFillSymbol.STYLE_CROSS</a></li>
+                            <li><a href="gMap.symbols.SimpleFillSymbol.html#.SimpleFillSymbol.STYLE_DIAGONAL_CROSS">SimpleFillSymbol.STYLE_DIAGONAL_CROSS</a></li>
+                            <li><a href="gMap.symbols.SimpleFillSymbol.html#.SimpleFillSymbol.STYLE_FORWARD_DIAGONAL">SimpleFillSymbol.STYLE_FORWARD_DIAGONAL</a></li>
+                            <li><a href="gMap.symbols.SimpleFillSymbol.html#.SimpleFillSymbol.STYLE_HORIZONTAL">SimpleFillSymbol.STYLE_HORIZONTAL</a></li>
+                            <li><a href="gMap.symbols.SimpleFillSymbol.html#.SimpleFillSymbol.STYLE_NULL">SimpleFillSymbol.STYLE_NULL</a></li>
+                            <li><a href="gMap.symbols.SimpleFillSymbol.html#.SimpleFillSymbol.STYLE_SOLID">SimpleFillSymbol.STYLE_SOLID</a></li>
+                            <li><a href="gMap.symbols.SimpleFillSymbol.html#.SimpleFillSymbol.STYLE_VERTICAL">SimpleFillSymbol.STYLE_VERTICAL</a></li>
+                        </ul>
+                        <div class="member-type">Methods</div>
+                        <ul class="inner">
+                            <li><a href="gMap.symbols.SimpleFillSymbol.html#setColor">setColor</a></li>
+                            <li><a href="gMap.symbols.SimpleFillSymbol.html#setOutline">setOutline</a></li>
+                            <li><a href="gMap.symbols.SimpleFillSymbol.html#setStyle">setStyle</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.symbols.SimpleLineSymbol.html">SimpleLineSymbol</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.symbols.SimpleLineSymbol_sub">
+                        <div class="member-type">Members</div>
+                        <ul class="inner">
+                            <li><a href="gMap.symbols.SimpleLineSymbol.html#.SimpleLineSymbol.STYLE_DASH">SimpleLineSymbol.STYLE_DASH</a></li>
+                            <li><a href="gMap.symbols.SimpleLineSymbol.html#.SimpleLineSymbol.STYLE_DASHDOT">SimpleLineSymbol.STYLE_DASHDOT</a></li>
+                            <li><a href="gMap.symbols.SimpleLineSymbol.html#.SimpleLineSymbol.STYLE_DASHDOTDOT">SimpleLineSymbol.STYLE_DASHDOTDOT</a></li>
+                            <li><a href="gMap.symbols.SimpleLineSymbol.html#.SimpleLineSymbol.STYLE_DOT">SimpleLineSymbol.STYLE_DOT</a></li>
+                            <li><a href="gMap.symbols.SimpleLineSymbol.html#.SimpleLineSymbol.STYLE_LONGDASH">SimpleLineSymbol.STYLE_LONGDASH</a></li>
+                            <li><a href="gMap.symbols.SimpleLineSymbol.html#.SimpleLineSymbol.STYLE_LONGDASHDOT">SimpleLineSymbol.STYLE_LONGDASHDOT</a></li>
+                            <li><a href="gMap.symbols.SimpleLineSymbol.html#.SimpleLineSymbol.STYLE_NULL">SimpleLineSymbol.STYLE_NULL</a></li>
+                            <li><a href="gMap.symbols.SimpleLineSymbol.html#.SimpleLineSymbol.STYLE_SHORTDASH">SimpleLineSymbol.STYLE_SHORTDASH</a></li>
+                            <li><a href="gMap.symbols.SimpleLineSymbol.html#.SimpleLineSymbol.STYLE_SHORTDASHDOT">SimpleLineSymbol.STYLE_SHORTDASHDOT</a></li>
+                            <li><a href="gMap.symbols.SimpleLineSymbol.html#.SimpleLineSymbol.STYLE_SHORTDASHDOTDOT">SimpleLineSymbol.STYLE_SHORTDASHDOTDOT</a></li>
+                            <li><a href="gMap.symbols.SimpleLineSymbol.html#.SimpleLineSymbol.STYLE_SHORTDOT">SimpleLineSymbol.STYLE_SHORTDOT</a></li>
+                            <li><a href="gMap.symbols.SimpleLineSymbol.html#.SimpleLineSymbol.STYLE_SOLID">SimpleLineSymbol.STYLE_SOLID</a></li>
+                        </ul>
+                        <div class="member-type">Methods</div>
+                        <ul class="inner">
+                            <li><a href="gMap.symbols.SimpleLineSymbol.html#setColor">setColor</a></li>
+                            <li><a href="gMap.symbols.SimpleLineSymbol.html#setStyle">setStyle</a></li>
+                            <li><a href="gMap.symbols.SimpleLineSymbol.html#setWidth">setWidth</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.symbols.SimpleMarkerSymbol.html">SimpleMarkerSymbol</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.symbols.SimpleMarkerSymbol_sub">
+                        <div class="member-type">Members</div>
+                        <ul class="inner">
+                            <li><a href="gMap.symbols.SimpleMarkerSymbol.html#.SimpleMarkerSymbol.STYLE_CIRCLE">SimpleMarkerSymbol.STYLE_CIRCLE</a></li>
+                            <li><a href="gMap.symbols.SimpleMarkerSymbol.html#.SimpleMarkerSymbol.STYLE_CROSS">SimpleMarkerSymbol.STYLE_CROSS</a></li>
+                            <li><a href="gMap.symbols.SimpleMarkerSymbol.html#.SimpleMarkerSymbol.STYLE_DIAMOND">SimpleMarkerSymbol.STYLE_DIAMOND</a></li>
+                            <li><a href="gMap.symbols.SimpleMarkerSymbol.html#.SimpleMarkerSymbol.STYLE_SQUARE">SimpleMarkerSymbol.STYLE_SQUARE</a></li>
+                            <li><a href="gMap.symbols.SimpleMarkerSymbol.html#.SimpleMarkerSymbol.STYLE_X">SimpleMarkerSymbol.STYLE_X</a></li>
+                        </ul>
+                        <div class="member-type">Methods</div>
+                        <ul class="inner">
+                            <li><a href="gMap.symbols.SimpleMarkerSymbol.html#setAngle">setAngle</a></li>
+                            <li><a href="gMap.symbols.SimpleMarkerSymbol.html#setColor">setColor</a></li>
+                            <li><a href="gMap.symbols.SimpleMarkerSymbol.html#setSize">setSize</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.symbols.Symbol.html">Symbol</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.symbols.Symbol_sub">
+                        <div class="member-type">Methods</div>
+                        <ul class="inner">
+                            <li><a href="gMap.symbols.Symbol.html#setColor">setColor</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.symbols.TextSymbol.html">TextSymbol</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.symbols.TextSymbol_sub">
+                        <div class="member-type">Methods</div>
+                        <ul class="inner">
+                            <li><a href="gMap.symbols.TextSymbol.html#setAngle">setAngle</a></li>
+                            <li><a href="gMap.symbols.TextSymbol.html#setColor">setColor</a></li>
+                            <li><a href="gMap.symbols.TextSymbol.html#setFont">setFont</a></li>
+                            <li><a href="gMap.symbols.TextSymbol.html#setHaloColor">setHaloColor</a></li>
+                            <li><a href="gMap.symbols.TextSymbol.html#setHaloSize">setHaloSize</a></li>
+                            <li><a href="gMap.symbols.TextSymbol.html#setHorizontalAlignment">setHorizontalAlignment</a></li>
+                            <li><a href="gMap.symbols.TextSymbol.html#setKerning">setKerning</a></li>
+                            <li><a href="gMap.symbols.TextSymbol.html#setOffset">setOffset</a></li>
+                            <li><a href="gMap.symbols.TextSymbol.html#setRotated">setRotated</a></li>
+                            <li><a href="gMap.symbols.TextSymbol.html#setText">setText</a></li>
+                            <li><a href="gMap.symbols.TextSymbol.html#setVerticalAlignment">setVerticalAlignment</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.tasks.DeviceHistoryQueryFilter.html">DeviceHistoryQueryFilter</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.tasks.DeviceHistoryQueryFilter_sub"></div>
+                </li>
+                <li><a href="gMap.tasks.DeviceHistoryQueryTask.html">DeviceHistoryQueryTask</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.tasks.DeviceHistoryQueryTask_sub">
+                        <div class="member-type">Methods</div>
+                        <ul class="inner">
+                            <li><a href="gMap.tasks.DeviceHistoryQueryTask.html#execute">execute</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.tasks.FindFilter.html">FindFilter</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.tasks.FindFilter_sub">
+                        <div class="member-type">Typedef</div>
+                        <ul class="inner">
+                            <li><a href="gMap.tasks.FindFilter.html#.TaskOptions">TaskOptions</a></li>
+                            <li><a href="gMap.tasks.FindFilter.html#.TaskOptions">TaskOptions</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.tasks.FindTask.html">FindTask</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.tasks.FindTask_sub">
+                        <div class="member-type">Methods</div>
+                        <ul class="inner">
+                            <li><a href="gMap.tasks.FindTask.html#execute">execute</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.tasks.IdentityFilter.html">IdentityFilter</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.tasks.IdentityFilter_sub">
+                        <div class="member-type">Typedef</div>
+                        <ul class="inner">
+                            <li><a href="gMap.tasks.IdentityFilter.html#.TaskOptions">TaskOptions</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.tasks.IdentityTask.html">IdentityTask</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.tasks.IdentityTask_sub">
+                        <div class="member-type">Methods</div>
+                        <ul class="inner">
+                            <li><a href="gMap.tasks.IdentityTask.html#execute">execute</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.tasks.psrDevTreeTask.html">psrDevTreeTask</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.tasks.psrDevTreeTask_sub">
+                        <div class="member-type">Methods</div>
+                        <ul class="inner">
+                            <li><a href="gMap.tasks.psrDevTreeTask.html#execute">execute</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.tasks.psrIdentifyTask.html">psrIdentifyTask</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.tasks.psrIdentifyTask_sub"></div>
+                </li>
+                <li><a href="gMap.tasks.psrNameQueryTask.html">psrNameQueryTask</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.tasks.psrNameQueryTask_sub"></div>
+                </li>
+                <li><a href="gMap.tasks.psrQueryTask.html">psrQueryTask</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.tasks.psrQueryTask_sub"></div>
+                </li>
+                <li><a href="gMap.tasks.QueryFilter.html">QueryFilter</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.tasks.QueryFilter_sub">
+                        <div class="member-type">Members</div>
+                        <ul class="inner">
+                            <li><a href="gMap.tasks.QueryFilter.html#.QueryFilter.SPATIAL_REL_AND">QueryFilter.SPATIAL_REL_AND</a></li>
+                            <li><a href="gMap.tasks.QueryFilter.html#.QueryFilter.SPATIAL_REL_BBOX">QueryFilter.SPATIAL_REL_BBOX</a></li>
+                            <li><a href="gMap.tasks.QueryFilter.html#.QueryFilter.SPATIAL_REL_CONTAINS">QueryFilter.SPATIAL_REL_CONTAINS</a></li>
+                            <li><a href="gMap.tasks.QueryFilter.html#.QueryFilter.SPATIAL_REL_DURING">QueryFilter.SPATIAL_REL_DURING</a></li>
+                            <li><a href="gMap.tasks.QueryFilter.html#.QueryFilter.SPATIAL_REL_EQUALTO">QueryFilter.SPATIAL_REL_EQUALTO</a></li>
+                            <li><a href="gMap.tasks.QueryFilter.html#.QueryFilter.SPATIAL_REL_GREATERTHAN_OR_EQUALTO">QueryFilter.SPATIAL_REL_GREATERTHAN_OR_EQUALTO</a></li>
+                            <li><a href="gMap.tasks.QueryFilter.html#.QueryFilter.SPATIAL_REL_INTERSECTS">QueryFilter.SPATIAL_REL_INTERSECTS</a></li>
+                            <li><a href="gMap.tasks.QueryFilter.html#.QueryFilter.SPATIAL_REL_ISBETWEEN">QueryFilter.SPATIAL_REL_ISBETWEEN</a></li>
+                            <li><a href="gMap.tasks.QueryFilter.html#.QueryFilter.SPATIAL_REL_ISLIKE">QueryFilter.SPATIAL_REL_ISLIKE</a></li>
+                            <li><a href="gMap.tasks.QueryFilter.html#.QueryFilter.SPATIAL_REL_ISNULL">QueryFilter.SPATIAL_REL_ISNULL</a></li>
+                            <li><a href="gMap.tasks.QueryFilter.html#.QueryFilter.SPATIAL_REL_LESSTHAN">QueryFilter.SPATIAL_REL_LESSTHAN</a></li>
+                            <li><a href="gMap.tasks.QueryFilter.html#.QueryFilter.SPATIAL_REL_LESSTHAN_OR_EQUALTO">QueryFilter.SPATIAL_REL_LESSTHAN_OR_EQUALTO</a></li>
+                            <li><a href="gMap.tasks.QueryFilter.html#.QueryFilter.SPATIAL_REL_NOT">QueryFilter.SPATIAL_REL_NOT</a></li>
+                            <li><a href="gMap.tasks.QueryFilter.html#.QueryFilter.SPATIAL_REL_OR">QueryFilter.SPATIAL_REL_OR</a></li>
+                            <li><a href="gMap.tasks.QueryFilter.html#.QueryFilter.SPATIAL_REL_WITHIN">QueryFilter.SPATIAL_REL_WITHIN</a></li>
+                        </ul>
+                        <div class="member-type">Typedef</div>
+                        <ul class="inner">
+                            <li><a href="gMap.tasks.QueryFilter.html#.TaskOptions">TaskOptions</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.tasks.QueryTask.html">QueryTask</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.tasks.QueryTask_sub">
+                        <div class="member-type">Methods</div>
+                        <ul class="inner">
+                            <li><a href="gMap.tasks.QueryTask.html#execute">execute</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.tasks.TemporalIdentifyFilter.html">TemporalIdentifyFilter</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.tasks.TemporalIdentifyFilter_sub">
+                        <div class="member-type">Typedef</div>
+                        <ul class="inner">
+                            <li><a href="gMap.tasks.TemporalIdentifyFilter.html#.TaskOptions">TaskOptions</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.tasks.TemporalIdentifyTask.html">TemporalIdentifyTask</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.tasks.TemporalIdentifyTask_sub">
+                        <div class="member-type">Methods</div>
+                        <ul class="inner">
+                            <li><a href="gMap.tasks.TemporalIdentifyTask.html#execute">execute</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.tasks.TemporalQueryFilter.html">TemporalQueryFilter</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.tasks.TemporalQueryFilter_sub">
+                        <div class="member-type">Typedef</div>
+                        <ul class="inner">
+                            <li><a href="gMap.tasks.TemporalQueryFilter.html#.TaskOptions">TaskOptions</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.tasks.TemporalQueryTask.html">TemporalQueryTask</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.tasks.TemporalQueryTask_sub">
+                        <div class="member-type">Methods</div>
+                        <ul class="inner">
+                            <li><a href="gMap.tasks.TemporalQueryTask.html#execute">execute</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.tasks.transByLine.html">transByLine</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.tasks.transByLine_sub">
+                        <div class="member-type">Methods</div>
+                        <ul class="inner">
+                            <li><a href="gMap.tasks.transByLine.html#execute">execute</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="gMap.tasks.treeDown.html">treeDown</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.tasks.treeDown_sub"></div>
+                </li>
+                <li><a href="gMap.tasks.treeUp.html">treeUp</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.tasks.treeUp_sub"></div>
+                </li>
+                <li><a href="gMap.tasks.userByTrans.html">userByTrans</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.tasks.userByTrans_sub">
+                        <div class="member-type">Methods</div>
+                        <ul class="inner">
+                            <li><a href="gMap.tasks.userByTrans.html#execute">execute</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="lnb-api hidden">
+            <h3>Namespaces</h3>
+            <ul>
+                <li><a href="gMap.html">gMap</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap_sub"></div>
+                </li>
+                <li><a href="gMap.geometry.html">gMap.geometry</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.geometry_sub"></div>
+                </li>
+                <li><a href="gMap.layers.html">gMap.layers</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.layers_sub"></div>
+                </li>
+                <li><a href="gMap.symbols.html">gMap.symbols</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.symbols_sub"></div>
+                </li>
+                <li><a href="gMap.tasks.html">gMap.tasks</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button>
+                    <div class="hidden" id="gMap.tasks_sub"></div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="resizer"></div>
+
+    <div class="main" id="main">
+
+
+
+
+
+        <section>
+
+            <header>
+
+                <h2><span class="attribs"><span class="type-signature"></span></span>Font<span class="signature">(style, variant, weight, size, family)</span><span class="type-signature"></span></h2>
+
+
+            </header>
+
+            <article>
+
+                <div class="container-overview">
+
+
+
+                    <dt>
+    
+        <h4 class="name" id="Font">
+            
+                new <span class="type-signature"></span>Font<span class="signature">(style, variant, weight, size, family)</span><span class="type-signature"></span>
+                
+            
+        </h4>
+
+        
+    
+</dt>
+                    <dd>
+
+
+                        <div class="description">
+                            <p>创建Font的实例.</p>
+                        </div>
+
+
+
+
+
+
+
+
+
+                        <div class="container-params">
+                            <h5>Parameters:</h5>
+
+                            <table class="params">
+                                <thead>
+                                    <tr>
+
+                                        <th>Name</th>
+
+
+                                        <th>Type</th>
+
+
+
+
+
+                                        <th class="last">Description</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+
+
+                                    <tr>
+
+                                        <td class="name"><code>style</code></td>
+
+
+                                        <td class="type">
+
+
+                                            <span class="param-type">string</span> |
+
+                                            <span class="param-type">undefind</span>
+
+
+
+                                        </td>
+
+
+
+
+
+                                        <td class="description last">
+                                            <p>字形样式，取值为'italic','normal','oblique'，默认'normal'</p>
+                                        </td>
+                                    </tr>
+
+
+
+                                    <tr>
+
+                                        <td class="name"><code>variant</code></td>
+
+
+                                        <td class="type">
+
+
+                                            <span class="param-type">string</span> |
+
+                                            <span class="param-type">undefind</span>
+
+
+
+                                        </td>
+
+
+
+
+
+                                        <td class="description last">
+                                            <p>取值为'normal','small-caps'.默认为'normal'</p>
+                                        </td>
+                                    </tr>
+
+
+
+                                    <tr>
+
+                                        <td class="name"><code>weight</code></td>
+
+
+                                        <td class="type">
+
+
+                                            <span class="param-type">string</span> |
+
+                                            <span class="param-type">undefind</span>
+
+
+
+                                        </td>
+
+
+
+
+
+                                        <td class="description last">
+                                            <p>取值为'bold','bolder','lighter','normal'.默认为'normal'</p>
+                                        </td>
+                                    </tr>
+
+
+
+                                    <tr>
+
+                                        <td class="name"><code>size</code></td>
+
+
+                                        <td class="type">
+
+
+                                            <span class="param-type">number</span>
+
+
+
+                                        </td>
+
+
+
+
+
+                                        <td class="description last">
+                                            <p>字体大小</p>
+                                        </td>
+                                    </tr>
+
+
+
+                                    <tr>
+
+                                        <td class="name"><code>family</code></td>
+
+
+                                        <td class="type">
+
+
+                                            <span class="param-type">string</span>
+
+
+
+                                        </td>
+
+
+
+
+
+                                        <td class="description last">
+                                            <p>字体</p>
+                                        </td>
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <dl class="details">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </dl>
+
+
+
+
+                    </dd>
+
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <h3 class="subsection-title">Methods</h3>
+
+                <dl>
+
+
+                    <dt>
+    
+        <h4 class="name" id="setFamily">
+            
+                <span class="type-signature"></span>setFamily<span class="signature">(family)</span><span class="type-signature"> &rarr; {<a href="gMap.symbols.Font.html">gMap.symbols.Font</a>}</span>
+                
+            
+        </h4>
+
+        
+    
+</dt>
+                    <dd>
+
+
+
+
+
+
+
+
+
+
+                        <div class="container-params">
+                            <h5>Parameters:</h5>
+
+                            <table class="params">
+                                <thead>
+                                    <tr>
+
+                                        <th>Name</th>
+
+
+                                        <th>Type</th>
+
+
+
+
+
+                                        <th class="last">Description</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+
+
+                                    <tr>
+
+                                        <td class="name"><code>family</code></td>
+
+
+                                        <td class="type">
+
+
+                                            <span class="param-type">string</span>
+
+
+
+                                        </td>
+
+
+
+
+
+                                        <td class="description last"></td>
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <div class="container-returns">
+                            <h5>Returns:</h5>
+
+
+
+
+
+                            <span class="param-type"><a href="gMap.symbols.Font.html">gMap.symbols.Font</a></span>
+
+
+
+
+
+
+
+
+
+                        </div>
+
+
+
+
+
+                        <dl class="details">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </dl>
+
+
+
+
+                    </dd>
+
+
+
+
+                    <dt>
+    
+        <h4 class="name" id="setSize">
+            
+                <span class="type-signature"></span>setSize<span class="signature">(size)</span><span class="type-signature"> &rarr; {<a href="gMap.symbols.Font.html">gMap.symbols.Font</a>}</span>
+                
+            
+        </h4>
+
+        
+    
+</dt>
+                    <dd>
+
+
+
+
+
+
+
+
+
+
+                        <div class="container-params">
+                            <h5>Parameters:</h5>
+
+                            <table class="params">
+                                <thead>
+                                    <tr>
+
+                                        <th>Name</th>
+
+
+                                        <th>Type</th>
+
+
+
+
+
+                                        <th class="last">Description</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+
+
+                                    <tr>
+
+                                        <td class="name"><code>size</code></td>
+
+
+                                        <td class="type">
+
+
+                                            <span class="param-type">number</span>
+
+
+
+                                        </td>
+
+
+
+
+
+                                        <td class="description last"></td>
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <div class="container-returns">
+                            <h5>Returns:</h5>
+
+
+
+
+
+                            <span class="param-type"><a href="gMap.symbols.Font.html">gMap.symbols.Font</a></span>
+
+
+
+
+
+
+
+
+
+                        </div>
+
+
+
+
+
+                        <dl class="details">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </dl>
+
+
+
+
+                    </dd>
+
+
+
+
+                    <dt>
+    
+        <h4 class="name" id="setStyle">
+            
+                <span class="type-signature"></span>setStyle<span class="signature">(style)</span><span class="type-signature"> &rarr; {<a href="gMap.symbols.Font.html">gMap.symbols.Font</a>}</span>
+                
+            
+        </h4>
+
+        
+    
+</dt>
+                    <dd>
+
+
+
+
+
+
+
+
+
+
+                        <div class="container-params">
+                            <h5>Parameters:</h5>
+
+                            <table class="params">
+                                <thead>
+                                    <tr>
+
+                                        <th>Name</th>
+
+
+                                        <th>Type</th>
+
+
+
+
+
+                                        <th class="last">Description</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+
+
+                                    <tr>
+
+                                        <td class="name"><code>style</code></td>
+
+
+                                        <td class="type">
+
+
+                                            <span class="param-type">string</span>
+
+
+
+                                        </td>
+
+
+
+
+
+                                        <td class="description last"></td>
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <div class="container-returns">
+                            <h5>Returns:</h5>
+
+
+
+
+
+                            <span class="param-type"><a href="gMap.symbols.Font.html">gMap.symbols.Font</a></span>
+
+
+
+
+
+
+
+
+
+                        </div>
+
+
+
+
+
+                        <dl class="details">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </dl>
+
+
+
+
+                    </dd>
+
+
+
+
+                    <dt>
+    
+        <h4 class="name" id="setVariant">
+            
+                <span class="type-signature"></span>setVariant<span class="signature">(variant)</span><span class="type-signature"> &rarr; {<a href="gMap.symbols.Font.html">gMap.symbols.Font</a>}</span>
+                
+            
+        </h4>
+
+        
+    
+</dt>
+                    <dd>
+
+
+
+
+
+
+
+
+
+
+                        <div class="container-params">
+                            <h5>Parameters:</h5>
+
+                            <table class="params">
+                                <thead>
+                                    <tr>
+
+                                        <th>Name</th>
+
+
+                                        <th>Type</th>
+
+
+
+
+
+                                        <th class="last">Description</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+
+
+                                    <tr>
+
+                                        <td class="name"><code>variant</code></td>
+
+
+                                        <td class="type">
+
+
+                                            <span class="param-type">string</span>
+
+
+
+                                        </td>
+
+
+
+
+
+                                        <td class="description last"></td>
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <div class="container-returns">
+                            <h5>Returns:</h5>
+
+
+
+
+
+                            <span class="param-type"><a href="gMap.symbols.Font.html">gMap.symbols.Font</a></span>
+
+
+
+
+
+
+
+
+
+                        </div>
+
+
+
+
+
+                        <dl class="details">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </dl>
+
+
+
+
+                    </dd>
+
+
+
+
+                    <dt>
+    
+        <h4 class="name" id="setWeight">
+            
+                <span class="type-signature"></span>setWeight<span class="signature">(weight)</span><span class="type-signature"> &rarr; {<a href="gMap.symbols.Font.html">gMap.symbols.Font</a>}</span>
+                
+            
+        </h4>
+
+        
+    
+</dt>
+                    <dd>
+
+
+
+
+
+
+
+
+
+
+                        <div class="container-params">
+                            <h5>Parameters:</h5>
+
+                            <table class="params">
+                                <thead>
+                                    <tr>
+
+                                        <th>Name</th>
+
+
+                                        <th>Type</th>
+
+
+
+
+
+                                        <th class="last">Description</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+
+
+                                    <tr>
+
+                                        <td class="name"><code>weight</code></td>
+
+
+                                        <td class="type">
+
+
+                                            <span class="param-type">string</span>
+
+
+
+                                        </td>
+
+
+
+
+
+                                        <td class="description last"></td>
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <div class="container-returns">
+                            <h5>Returns:</h5>
+
+
+
+
+
+                            <span class="param-type"><a href="gMap.symbols.Font.html">gMap.symbols.Font</a></span>
+
+
+
+
+
+
+
+
+
+                        </div>
+
+
+
+
+
+                        <dl class="details">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </dl>
+
+
+
+
+                    </dd>
+
+                </dl>
+
+
+
+
+
+            </article>
+
+        </section>
+
+
+
+
+    </div>
+
+    <footer>
+        <img class="logo" src="img/toast-ui.png" style="width: 110px">
+        <div class="footer-text">版权归北京国科恒通科技股份有限公司所有</div>
+    </footer>
+    <script>
+        prettyPrint();
+    </script>
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/tui-doc.js"></script>
+    <script src="scripts/linenumber.js"></script>
+
+    <script>
+        var id = 'Font_sub'.replace(/"/g, '_');
+        var selectedApi = document.getElementById(id); // do not use jquery selector
+        var $selectedApi = $(selectedApi);
+
+        $selectedApi.removeClass('hidden');
+        $selectedApi.parent().find('.glyphicon').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+        showLnbApi();
+    </script>
+
+</body>
+
+</html>
