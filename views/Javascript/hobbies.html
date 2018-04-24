@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Vue</title>
+</head>
+
+<body>
+    <header>
+        <h2>[3, 30, 34, 5, 9] 求最大值 => 9534330</h2>
+    </header>
+    <ul id="example-nav" class="nav nav-tabs">
+        <li role="presentation" id="example-js-btn" class="active" onclick="showJs()">
+            <a href="#">JS</a>
+        </li>
+    </ul>
+
+    <article>
+        <div id="example-js" class="hidden">
+            <pre class="prettyprint source">    
+    var arr = [3, 30, 34, 5, 9];
+    var result = arr.sort(function(a, b){
+        return ('' + b + a) - ('' +  a + b);
+    }).join('');
+    console.log(Number(result));//9534330
+            </pre>
+        </div>
+    </article>
+    <script>
+        prettyPrint();
+        var exampleJs = document.getElementById('example-js');
+        var exampleJsBtn = document.getElementById('example-js-btn');
+
+        function setActive(el) {
+            el.className += ' active';
+        }
+
+        function setInactive(el) {
+            el.className = el.className.replace(/\s*active\s*/g, '');
+        }
+
+        function show(el) {
+            el.className = el.className.replace(/\s*hidden\s*/g, '');
+        }
+
+        function hide(el) {
+            el.className += ' hidden';
+        }
+
+        function showJs() {
+            show(exampleJs);
+            setActive(exampleJsBtn);
+        }
+        showJs();
+    </script>
+</body>

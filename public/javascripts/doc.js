@@ -47,6 +47,10 @@ var docs = {
             case 5:
                 $('#section').load('/js');
                 break;
+            case 6:
+                $('#section').load('/js/hobbies');
+                break;
+
         }
     }
 };
