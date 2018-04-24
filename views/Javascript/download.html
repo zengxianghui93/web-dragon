@@ -9,7 +9,20 @@
 </head>
 
 <body>
-    <div></div>
+    <a href="/File/搭建Express项目.docx" download="" id="hf" style="display:none;"></a>
+    <button type="button" onclick="downloadFile('hf')">下载</button>
+    <script>
+        //a标签 id
+        function downloadFile(id) {
+            debugger
+            var href = document.getElementById(id).href;
+            var index = href.lastIndexOf("\.");
+            var suffix = href.substring(index, href.length); //截取后缀名成（比如：.ceb、.docx等等）
+            //重新命名下载文件名称（不赋值download属性，浏览器会默认下载文件名称包括后缀名比如：搭建Express项目.docx！如果需要改名的话需要拼接名称和后缀名）
+            document.getElementById(id).download = 'Express' + suffix;
+            document.getElementById(id).click(); //模拟点击实现下载
+        }
+    </script>
 </body>
 
 </html>

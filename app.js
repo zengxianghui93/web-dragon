@@ -28,12 +28,14 @@ const vue = require('./routes/Vue/index');
 const openlayers = require('./routes/Openlayers/index');
 const css = require('./routes/Css/index');
 const git = require('./routes/Git/index');
+const js = require('./routes/Javascript/index');
 
 app.use('/', index);
 app.use('/vue', vue);
 app.use('/openlayers', openlayers);
 app.use('/css', css);
-app.use('/git', git)
+app.use('/git', git);
+app.use('/js', js);
 
 
 // catch 404 and forward to error handler
