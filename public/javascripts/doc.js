@@ -50,6 +50,9 @@ var docs = {
             case 6:
                 $('#section').load('/js/hobbies');
                 break;
+            case 7:
+                $('#section').load('/bootstrap/layout_1');
+                break;
 
         }
     }

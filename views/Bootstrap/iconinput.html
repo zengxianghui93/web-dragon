@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>web dragon</title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="../../public/stylesheets/bootstrap.min.css"> -->
+    <style>
+        .icon-group {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .icon-group .form-control-icon {
+            position: absolute;
+            top: -2px;
+            right: 0;
+            z-index: 9;
+            display: block;
+            width: 34px;
+            height: 34px;
+            line-height: 34px;
+            text-align: center;
+            pointer-events: none;
+        }
+        
+        .icon-group .icon-shade {
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 99;
+            cursor: pointer;
+        }
+        
+        .icon-group input {
+            height: 30px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div style="width:196px;">
+        <!-- 基础版本 -->
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+            <span class="input-group-addon" id="basic-addon1">@</span>
+        </div>
+
+        <!-- 升级本版 -->
+        <div class="input-group icon-group">
+            <span id="bGlyphicon" class="glyphicon glyphicon-search form-control-icon"></span>
+            <input id="searchTree" type="text" class="form-control" name="username" placeholder="搜索">
+            <span class="icon-shade"></span>
+        </div>
+    </div>
+    <!-- 下拉菜单 -->
+    <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              下拉菜单
+              <span class="caret"></span>
+            </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" style="min-width:inherit;">
+            <li><a href="#">高压统计</a></li>
+            <li><a href="#">中压统计</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">低压统计</a></li>
+        </ul>
+    </div>
+
+    <script src="/javascripts/jquery.min.js"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <!-- <script src="../../public/javascripts/jquery.min.js"></script> -->
+    <!-- <script src="../../public/javascripts/bootstrap.min.js"></script> -->
+    <script>
+        //input 最后一次值
+        var lastValue = "";
+
+        //icon click
+        $('.icon-shade').click(function() {
+            if ($('#bGlyphicon').hasClass('glyphicon-search')) {
+                $('#bGlyphicon').removeClass('glyphicon-search').addClass('glyphicon-remove');
+                lastValue = $('#searchTree').val();
+                //do something....
+            } else {
+                $('#bGlyphicon').removeClass('glyphicon-remove').addClass('glyphicon-search');
+                $('#searchTree').val('');
+                $('.p-result').text('');
+            }
+        });
+
+        //input change
+        $('#searchTree').bind("input propertychange", function() {
+            if (lastValue !== $('#searchTree').val().trim()) {
+                $('#bGlyphicon').removeClass('glyphicon-remove').addClass('glyphicon-search');
+            }
+        });
+    </script>
+</body>
+
+</html>

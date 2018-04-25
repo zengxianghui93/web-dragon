@@ -29,6 +29,7 @@ const openlayers = require('./routes/Openlayers/index');
 const css = require('./routes/Css/index');
 const git = require('./routes/Git/index');
 const js = require('./routes/Javascript/index');
+const bootstrap = require('./routes/Bootstrap/index');
 
 app.use('/', index);
 app.use('/vue', vue);
@@ -36,6 +37,8 @@ app.use('/openlayers', openlayers);
 app.use('/css', css);
 app.use('/git', git);
 app.use('/js', js);
+app.use('/bootstrap', bootstrap);
+
 
 
 // catch 404 and forward to error handler

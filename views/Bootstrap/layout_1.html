@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>web dragon</title>
+</head>
+
+<body>
+    <header>
+        <h2>Bootstrap菜单组</h2>
+    </header>
+    <ul id="example-nav" class="nav nav-tabs">
+        <li role="presentation" id="example-result-btn" class="active" onclick="showResult()">
+            <a href="#">Result</a>
+        </li>
+        <li role="presentation" id="example-js-btn" class="" onclick="showJs()" style="display:none;">
+            <a href="#">JS</a>
+        </li>
+        <li role="presentation" id="example-css-btn" class="" onclick="showCss()">
+            <a href="#">CSS</a>
+        </li>
+        <li role="presentation" id="example-html-btn" class="" onclick="showHtml()">
+            <a href="#">HTML</a>
+        </li>
+    </ul>
+    <article>
+        <iframe id="example-result" width="100%" height="800" frameborder="0" src="bootstrap/iconinput"></iframe>
+        <div id="example-js" class="hidden">
+            <pre class="prettyprint source">    
+    
+            </pre>
+        </div>
+        <div id="example-css" class="hidden">
+            <pre class="prettyprint source">
+    .icon-group {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .icon-group .form-control-icon {
+        position: absolute;
+        top: -2px;
+        right: 0;
+        z-index: 9;
+        display: block;
+        width: 34px;
+        height: 34px;
+        line-height: 34px;
+        text-align: center;
+        pointer-events: none;
+    }
+    
+    .icon-group .icon-shade {
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 99;
+        cursor: pointer;
+    }
+    
+    .icon-group input {
+        height: 30px;
+    }
+            </pre>
+        </div>
+        <div id="example-html" class="hidden">
+            <pre class="prettyprint source">
+    &lt;head>
+        &lt;meta charset="utf-8">
+        &lt;title>Vue&lt;/title>
+        &lt;link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+        &lt;script src="/javascripts/jquery.min.js">&lt;/script>
+        &lt;script src="/javascripts/bootstrap.min.js">&lt;/script>
+    &lt;/head>
+    
+    &lt;body>
+    &lt;div style="width:196px;">
+        &lt;!-- 基础版本 -->
+        &lt;div class="input-group">
+            &lt;input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+            &lt;span class="input-group-addon" id="basic-addon1">@&lt;/span>
+        &lt;/div>
+
+        &lt;!-- 升级本版 -->
+        &lt;div class="input-group icon-group">
+            &lt;span id="bGlyphicon" class="glyphicon glyphicon-search form-control-icon">&lt;/span>
+            &lt;input id="searchTree" type="text" class="form-control" name="username" placeholder="搜索">
+            &lt;span class="icon-shade">&lt;/span>
+        &lt;/div>
+    &lt;/div>
+    &lt;!-- 下拉菜单 -->
+    &lt;div class="dropdown">
+        &lt;button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                下拉菜单
+                &lt;span class="caret">&lt;/span>
+            &lt;/button>
+        &lt;ul class="dropdown-menu" aria-labelledby="dropdownMenu1" style="min-width:inherit;">
+            &lt;li>&lt;a href="#">高压统计&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#">中压统计&lt;/a>&lt;/li>
+            &lt;li role="separator" class="divider">&lt;/li>
+            &lt;li>&lt;a href="#">低压统计&lt;/a>&lt;/li>
+        &lt;/ul>
+    &lt;/div>
+    &lt;/body>
+            </pre>
+        </div>
+    </article>
+    <script>
+        prettyPrint();
+        var exampleResult = document.getElementById('example-result');
+        var exampleJs = document.getElementById('example-js');
+        var exampleCss = document.getElementById('example-css');
+        var exampleHtml = document.getElementById('example-html');
+
+        var exampleResultBtn = document.getElementById('example-result-btn');
+        var exampleJsBtn = document.getElementById('example-js-btn');
+        var exampleCssBtn = document.getElementById('example-css-btn');
+        var exampleHtmlBtn = document.getElementById('example-html-btn');
+
+        function setActive(el) {
+            el.className += ' active';
+        }
+
+        function setInactive(el) {
+            el.className = el.className.replace(/\s*active\s*/g, '');
+        }
+
+        function show(el) {
+            el.className = el.className.replace(/\s*hidden\s*/g, '');
+        }
+
+        function hide(el) {
+            el.className += ' hidden';
+        }
+
+        function showJs() {
+            hide(exampleCss);
+            hide(exampleHtml);
+            hide(exampleResult);
+            setInactive(exampleCssBtn);
+            setInactive(exampleHtmlBtn);
+            setInactive(exampleResultBtn);
+
+            show(exampleJs);
+            setActive(exampleJsBtn);
+        }
+
+        function showHtml() {
+            hide(exampleCss);
+            hide(exampleJs);
+            hide(exampleResult);
+            setInactive(exampleCssBtn);
+            setInactive(exampleJsBtn);
+            setInactive(exampleResultBtn);
+
+            show(exampleHtml);
+            setActive(exampleHtmlBtn);
+        }
+
+        function showResult() {
+            hide(exampleCss);
+            hide(exampleJs);
+            hide(exampleHtml);
+            setInactive(exampleCssBtn);
+            setInactive(exampleJsBtn);
+            setInactive(exampleHtmlBtn);
+
+            show(exampleResult);
+            setActive(exampleResultBtn);
+        }
+
+        function showCss() {
+            hide(exampleResult);
+            hide(exampleJs);
+            hide(exampleHtml);
+            setInactive(exampleResultBtn);
+            setInactive(exampleJsBtn);
+            setInactive(exampleHtmlBtn);
+
+            show(exampleCss);
+            setActive(exampleCssBtn);
+        }
+    </script>
+</body>
