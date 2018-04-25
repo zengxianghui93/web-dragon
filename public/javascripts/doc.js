@@ -32,25 +32,28 @@ var docs = {
         // var $navExample = $('#navExample li a');
         var $section = $('#section');
         switch (index) {
-            case 1:
+            case 4001:
                 $('#section').load('/openlayers');
                 break;
-            case 2:
+            case 2001:
                 $('#section').load('/vue');
                 break;
-            case 3:
+            case 6001:
                 $('#section').load('/css');
                 break;
-            case 4:
+            case 'A01':
                 $('#section').load('/git');
                 break;
-            case 5:
+            case 3001:
                 $('#section').load('/js');
                 break;
-            case 6:
+            case 3002:
                 $('#section').load('/js/hobbies');
                 break;
-            case 7:
+            case 3003:
+                $('#section').load('/js/jslibrary');
+                break;
+            case 7001:
                 $('#section').load('/bootstrap/layout_1');
                 break;
 

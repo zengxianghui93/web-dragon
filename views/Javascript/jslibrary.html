@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Web Dragon</title>
+</head>
+
+<body>
+    <header>
+        <h2>js 常用方法</h2>
+    </header>
+    <ul id="example-nav" class="nav nav-tabs">
+        <li role="presentation" id="example-result-btn" class="hidden" onclick="showResult()">
+            <a href="#">Result</a>
+        </li>
+        <li role="presentation" id="example-js-btn" class="" onclick="showJs()">
+            <a href="#">JS</a>
+        </li>
+        <li role="presentation" id="example-css-btn" class="hidden" onclick="showCss()">
+            <a href="#">CSS</a>
+        </li>
+        <li role="presentation" id="example-html-btn" class="hidden" onclick="showHtml()">
+            <a href="#">HTML</a>
+        </li>
+    </ul>
+    <article>
+        <iframe id="example-result" width="100%" height="800" frameborder="0" src=""></iframe>
+        <div id="example-js">
+            <pre class="prettyprint source">    
+    /*
+    *js公共函数库
+    */
+    const drag = {
+        /**
+        * @description 获取浏览器url参数的值
+        * @param key  获取参数的key
+        * @return [String] value
+        */
+        getUrlParam: (key) => {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return (r[2]);
+            return null;
+        },
+        /**
+        * @description 格式化数据，防止页面出现undefined或者null字段
+        * @param     data   [数据]
+        * @param     format [格式] 0 Array[] ...
+        * @param     fixNum [number 保留几位小数]
+        * @default ''
+        * @example 保留两位小数 默认为0 ==> formattedData(data.SUBSTATION_NUM, 0, 2)  [String]
+        * @example undefined返回空数组  ==> formattedData(data.SUBSTATION_NUM, []) 
+        */
+        formattedData: (data, format, fixNum) => {
+            if (arguments.length == 1) {
+                return data == (null || undefined) ? "" : data;
+            }
+    
+            if (typeof data === 'undefined') {
+                if (format != undefined && format != null) {
+                    return format;
+                } else {
+                    return '';
+                }
+            }
+    
+            if (typeof data === 'object') {
+                if (Object.prototype.toString.call(data) === "[object Array]" || Object.prototype.toString.call(data) === "[object Object]") {
+                    return data;
+                } else {
+                    return format;
+                }
+            }
+    
+            if (typeof data === 'string') {
+                return data == (null || undefined || '') ? format : data;
+            }
+    
+            if (typeof data == "number") {
+                if (fixNum) {
+                    return data == (null || undefined) ? format : Number(data).toFixed(fixNum);
+                } else {
+                    return data == (null || undefined) ? format : Number(data);
+                }
+            }
+        },
+        /**
+        * 存储sessionStorage
+        */
+        setStore: (name, content) => {
+            if (!name) return;
+            if (typeof content !== 'string') {
+                content = JSON.stringify(content);
+            }
+            window.sessionStorage.setItem(name, content);
+        },
+        /**
+        * 获取sessionStorage
+        */
+        getStore: (name, type) => {
+            if (!name) return;
+            if (type && type === 'object') {
+                var obj = window.sessionStorage.getItem(name);
+                return JSON.parse(obj);
+            } else {
+                return window.sessionStorage.getItem(name);
+            }
+        },
+        /**
+        * 删除sessionStorage
+        */
+        removeStore: name => {
+            if (!name) return;
+            window.sessionStorage.removeItem(name);
+        },
+        //填充select
+        fillSelect: function(id, data) {
+            var obj = $("#" + id);
+            if (data != null && data.length > 0) {
+                for (let i = 0; i < data.length; i++) {
+                    obj.append("&lt;option value='" + data[i].key + "'>" + data[i].value + "&lt;/option>");
+                }
+                obj.prepend("&lt;option value='' selected>请选择&lt;/option>");
+            }
+        },
+        //获取地址栏参数
+        getUrlString: function(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return (r[2]);
+            return null;
+        },
+        hasClass: function(obj, cls) {
+            return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
+        },
+        //异步加载图片
+        loadImageAsync: function(url) {
+            return new Promise(function(resolve, reject) {
+                const image = new Image();
+                image.onload = function() {
+                    resolve(image);
+                }
+                image.onerror = function() {
+                    reject(new Error('Could not load image at ' + url));
+                }
+                image.src = url;
+            });
+        },
+        /**
+        * 原生js ajax
+        * 调用方法：Ajax('http://localhost:8080/api/index/pass', { departId: 33, batchName: "201709"}, 'POST', function(data) {
+                console.log(data);
+            });
+            Ajax('http://localhost:8080/api/index/pass?sid=10086', '', 'GET', function(data) {
+                console.log(data);
+            });
+        */
+        jsAjax: function(url, params, type, callback) {
+            var url = url;
+            params = (function(obj) { // 转成post需要的字符串.
+                var str = "";
+                for (var prop in obj) {
+                    str += prop + "=" + obj[prop] + "&"
+                }
+                return str.slice(0, -1);
+            })(params);
+            var request = this.getHTTPObject();
+            request.onreadystatechange = function() {
+                if (request.readyState == 4) {
+                    var status = request.status;
+                    if (status == 200) {
+                        callback(request.responseText);
+                    } else {
+                        throw new Error('请求异常')
+                        return false;
+                    }
+                }
+            }
+            var type = type || 'GET';
+            request.open(type, url, false);
+            request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            request.send(params);
+        },
+        getHTTPObject: function() {
+            var xmlhttp;
+            if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+            } else { // code for IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            return xmlhttp;
+        },
+        /**
+        * GET Ajax
+        * @param obj {url: '', async: ''} 或者 'url'
+        * @default 默认async true即异步调用
+        * @returns callback 回调函数
+        */
+        getAjax: function(obj, callback) {
+            var xmlHttp,
+                url,
+                async;
+    
+            if (typeof obj === "object") {
+                url = obj.url;
+                async = obj.async || true;
+            } else {
+                url = obj;
+                async = true;
+            }
+    
+            if (window.XMLHttpRequest) {
+                xmlHttp = new XMLHttpRequest();
+            } else {
+                xmlHttp = new ActiveXObject('Microsoft.XMLHTTP');
+            }
+            xmlHttp.onreadystatechange = function() {
+                if (xmlHttp.readyState === 4) {
+                    if (xmlHttp.status === 200) {
+                        callback(xmlHttp.responseText);
+                    } else {
+                        throw new Error('请求异常');
+                        return false;
+                    }
+                }
+            }
+    
+            xmlHttp.open('GET', url, async);
+            xmlHttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            xmlHttp.send();
+        },
+        /**
+        * POST Ajax
+        * @param obj {url: '', async: ''} 或者 'url'
+        * @param params {key: value}
+        * @default 默认async 为true即异步调用
+        * @returns callback 回调函数
+        */
+        postAjax: function(obj, params, callback) {
+            var xmlHttp,
+                url,
+                async;
+    
+            if (typeof obj === "object") {
+                url = obj.url;
+                async = obj.async || true;
+            } else {
+                url = obj;
+                async = true;
+            }
+    
+            var params = (function(obj) {
+                var str = '';
+                for (var props in obj) {
+                    str += props + '=' + obj[props] + '&';
+                }
+                return str.slice(0, -1);
+            })(params);
+    
+            if (window.XMLHttpRequest) {
+                xmlHttp = new XMLHttpRequest();
+            } else {
+                xmlHttp = new ActiveXObject('Microsoft.XMLHTTP');
+            }
+    
+            xmlHttp.onreadystatechange = function() {
+                if (xmlHttp.readyState === 4) {
+                    if (xmlHttp.status === 200) {
+                        callback(xmlHttp.responseText);
+                    } else {
+                        throw new Error();
+                        return false;
+                    }
+                }
+            }
+            xmlHttp.open('POST', url, async);
+            xmlHttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            xmlHttp.send(params);
+        },
+        /**
+        * @description 日期加天数
+        * @param date String 2018-02-28
+        * @param days Number 
+        * @returns String '2018-03-01'
+        */
+        addDay: function(date, days) {
+            var d = new Date(date);
+            d.setDate(d.getDate() + days);
+            var month = d.getMonth() + 1;
+            var monthStr1 = d.getFullYear() + "-" + (month < 10 ? "0" : "") + month;
+            return monthStr1 + (d.getDate() < 10 ? "-0" : "-") + d.getDate();
+        },
+        /**
+        * 深拷贝
+        */
+        deepClone: function(obj) {
+            if (typeof obj != "object") {
+                return obj;
+            }
+    
+            var newObj = obj.constructor === Array ? [] : {}; //开辟一块新的内存空间
+    
+            for (var i in obj) {
+                newObj[i] = deepClone(obj[i]); //通过递归实现深层的复制 
+            }
+    
+            return newObj;
+        },
+        /**
+        * 模拟a标签下载文件
+        * @param fileContent 文件内容
+        * @param type 文件类型
+        */
+        downloadFile: function(fileContent) {
+            var file = 'data:text/plan;chartset=utf-8,';
+            var fileContent = fileContent || 'this is a text content';
+            var encode = encodeURIComponent(fileContent);
+            file += encode;
+            var a = document.createElement('a');
+            a.href = file;
+            a.download = 'aa.txt';
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+        },
+        /**
+        * base64加密和解密
+        * @example
+        * var b = new Base64();
+        * 加密 var str = b.encode("li_mq.hcg:1");
+        * 解密 str = b.decode(str);
+        */
+        Base64: function() {
+            // private property
+            var _keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+    
+            // public method for encoding
+            this.encode = function(input) {
+                var output = "";
+                var chr1, chr2, chr3, enc1, enc2, enc3, enc4;
+                var i = 0;
+                input = _utf8_encode(input);
+                while (i < input.length) {
+                    chr1 = input.charCodeAt(i++);
+                    chr2 = input.charCodeAt(i++);
+                    chr3 = input.charCodeAt(i++);
+                    enc1 = chr1 >> 2;
+                    enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
+                    enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
+                    enc4 = chr3 & 63;
+                    if (isNaN(chr2)) {
+                        enc3 = enc4 = 64;
+                    } else if (isNaN(chr3)) {
+                        enc4 = 64;
+                    }
+                    output = output +
+                        _keyStr.charAt(enc1) + _keyStr.charAt(enc2) +
+                        _keyStr.charAt(enc3) + _keyStr.charAt(enc4);
+                }
+                return output;
+            }
+    
+    
+            // public method for decoding
+            this.decode = function(input) {
+                var output = "";
+                var chr1, chr2, chr3;
+                var enc1, enc2, enc3, enc4;
+                var i = 0;
+                input = input.replace(/[^A-Za-z0-9\+\/\=]/g, "");
+                while (i < input.length) {
+                    enc1 = _keyStr.indexOf(input.charAt(i++));
+                    enc2 = _keyStr.indexOf(input.charAt(i++));
+                    enc3 = _keyStr.indexOf(input.charAt(i++));
+                    enc4 = _keyStr.indexOf(input.charAt(i++));
+                    chr1 = (enc1 << 2) | (enc2 >> 4);
+                    chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
+                    chr3 = ((enc3 & 3) << 6) | enc4;
+                    output = output + String.fromCharCode(chr1);
+                    if (enc3 != 64) {
+                        output = output + String.fromCharCode(chr2);
+                    }
+                    if (enc4 != 64) {
+                        output = output + String.fromCharCode(chr3);
+                    }
+                }
+                output = _utf8_decode(output);
+                return output;
+            }
+    
+            // private method for UTF-8 encoding
+            _utf8_encode = function(string) {
+                string = string.replace(/\r\n/g, "\n");
+                var utftext = "";
+                for (var n = 0; n < string.length; n++) {
+                    var c = string.charCodeAt(n);
+                    if (c < 128) {
+                        utftext += String.fromCharCode(c);
+                    } else if ((c > 127) && (c < 2048)) {
+                        utftext += String.fromCharCode((c >> 6) | 192);
+                        utftext += String.fromCharCode((c & 63) | 128);
+                    } else {
+                        utftext += String.fromCharCode((c >> 12) | 224);
+                        utftext += String.fromCharCode(((c >> 6) & 63) | 128);
+                        utftext += String.fromCharCode((c & 63) | 128);
+                    }
+    
+                }
+                return utftext;
+            }
+    
+            // private method for UTF-8 decoding
+            _utf8_decode = function(utftext) {
+                var string = "";
+                var i = 0;
+                var c = c1 = c2 = 0;
+                while (i < utftext.length) {
+                    c = utftext.charCodeAt(i);
+                    if (c < 128) {
+                        string += String.fromCharCode(c);
+                        i++;
+                    } else if ((c > 191) && (c < 224)) {
+                        c2 = utftext.charCodeAt(i + 1);
+                        string += String.fromCharCode(((c & 31) << 6) | (c2 & 63));
+                        i += 2;
+                    } else {
+                        c2 = utftext.charCodeAt(i + 1);
+                        c3 = utftext.charCodeAt(i + 2);
+                        string += String.fromCharCode(((c & 15) << 12) | ((c2 & 63) << 6) | (c3 & 63));
+                        i += 3;
+                    }
+                }
+                return string;
+            }
+        }
+    };
+    
+    //数组根据key去重
+    Array.prototype.unique = function(key) {
+        var result = [],
+            hash = {};
+        for (var i = 0; i < this.length; i++) {
+            var elem = this[i].key;
+    
+            if (!hash[elem]) {
+                hash[elem] = true;
+                result.push(this[i]);
+            }
+        }
+        return result;
+    }
+    var arr = [{ key: '1', value: '11' },
+        { key: '2', value: '22' },
+        { key: '1', value: '11' },
+    ];
+    arr.unique('key'); //[{ key: '1', value: '11' },{ key: '2', value: '22' }]
+            </pre>
+        </div>
+        <div id="example-css">
+            <pre class="prettyprint source">
+                       
+            </pre>
+        </div>
+        <div id="example-html">
+            <pre class="prettyprint source">
+    
+            </pre>
+        </div>
+    </article>
+    <script>
+        prettyPrint();
+        var exampleResult = document.getElementById('example-result');
+        var exampleJs = document.getElementById('example-js');
+        var exampleCss = document.getElementById('example-css');
+        var exampleHtml = document.getElementById('example-html');
+
+        var exampleResultBtn = document.getElementById('example-result-btn');
+        var exampleJsBtn = document.getElementById('example-js-btn');
+        var exampleCssBtn = document.getElementById('example-css-btn');
+        var exampleHtmlBtn = document.getElementById('example-html-btn');
+
+        function setActive(el) {
+            el.className += ' active';
+        }
+
+        function setInactive(el) {
+            el.className = el.className.replace(/\s*active\s*/g, '');
+        }
+
+        function show(el) {
+            el.className = el.className.replace(/\s*hidden\s*/g, '');
+        }
+
+        function hide(el) {
+            debugger
+            el.className += ' hidden';
+        }
+
+        function showJs() {
+            debugger
+            hide(exampleCss);
+            hide(exampleHtml);
+            hide(exampleResult);
+            setInactive(exampleCssBtn);
+            setInactive(exampleHtmlBtn);
+            setInactive(exampleResultBtn);
+
+            show(exampleJs);
+            setActive(exampleJsBtn);
+        }
+
+        function showHtml() {
+            hide(exampleCss);
+            hide(exampleJs);
+            hide(exampleResult);
+            setInactive(exampleCssBtn);
+            setInactive(exampleJsBtn);
+            setInactive(exampleResultBtn);
+
+            show(exampleHtml);
+            setActive(exampleHtmlBtn);
+        }
+
+        function showResult() {
+            hide(exampleCss);
+            hide(exampleJs);
+            hide(exampleHtml);
+            setInactive(exampleCssBtn);
+            setInactive(exampleJsBtn);
+            setInactive(exampleHtmlBtn);
+
+            show(exampleResult);
+            setActive(exampleResultBtn);
+        }
+
+        function showCss() {
+
+            hide(exampleResult);
+            hide(exampleJs);
+            hide(exampleHtml);
+            setInactive(exampleResultBtn);
+            setInactive(exampleJsBtn);
+            setInactive(exampleHtmlBtn);
+
+            show(exampleCss);
+            setActive(exampleCssBtn);
+        }
+        showJs();
+    </script>
+</body>
