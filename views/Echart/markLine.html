@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web Drag</title>
+    <style>
+        .content {
+            width: 800px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="chart" class="content"></div>
+    <script src="/javascripts/echarts.min.js"></script>
+    <!-- <script src="../../public/javascripts/echarts.min.js"></script>/ -->
+    <script>
+        var chart = echarts.init(document.getElementById('chart'));
+        var option = {
+            xAxis: {
+                type: 'category',
+                data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: [{
+                    data: [80, 100, 125, 200, 220, 230, 180],
+                    type: 'line',
+
+                }, {
+                    type: 'line',
+                    markLine: {
+                        data: [{
+                            name: '150V',
+                            yAxis: 150
+                        }],
+                        itemStyle: {
+                            normal: {
+                                lineStyle: {
+                                    color: '#ffa500',
+                                },
+                                label: {
+                                    show: true,
+                                    formatter: '{b}',
+                                    color: "#ffa500",
+                                    position: 'end',
+                                },
+                                labelLine: {
+                                    show: true
+                                }
+                            }
+                        }
+                    }
+                }, {
+                    type: 'line',
+                    markLine: {
+                        data: [{
+                            name: '220V',
+                            yAxis: 220
+                        }],
+                        itemStyle: {
+                            normal: {
+                                lineStyle: {
+                                    color: '#00706b',
+                                },
+                                label: {
+                                    show: true,
+                                    formatter: '{b}',
+                                    color: "#00706b",
+                                    position: 'end',
+                                },
+                                labelLine: {
+                                    show: true
+                                }
+                            }
+                        }
+                    }
+                }, {
+                    type: 'line',
+                    markLine: {
+                        data: [{
+                            name: '110V',
+                            yAxis: 110
+                        }],
+                        itemStyle: {
+                            normal: {
+                                lineStyle: {
+                                    color: '#ff0000',
+                                },
+                                label: {
+                                    show: true,
+                                    formatter: '{b}',
+                                    color: "#ff0000",
+                                    position: 'end',
+                                },
+                                labelLine: {
+                                    show: true
+                                }
+                            }
+                        }
+                    }
+                },
+
+            ]
+        };
+
+        chart.setOption(option);
+    </script>
+</body>
+
+</html>

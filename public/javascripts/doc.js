@@ -32,17 +32,8 @@ var docs = {
         // var $navExample = $('#navExample li a');
         var $section = $('#section');
         switch (index) {
-            case 4001:
-                $('#section').load('/openlayers');
-                break;
             case 2001:
                 $('#section').load('/vue');
-                break;
-            case 6001:
-                $('#section').load('/css');
-                break;
-            case 'A01':
-                $('#section').load('/git');
                 break;
             case 3001:
                 $('#section').load('/js');
@@ -53,8 +44,19 @@ var docs = {
             case 3003:
                 $('#section').load('/js/jslibrary');
                 break;
+            case 4001:
+                $('#section').load('/openlayers');
+                break;
+            case 6001:
+                $('#section').load('/css');
+                break;
             case 7001:
                 $('#section').load('/bootstrap/layout_1');
+                break;
+            case 8001:
+                $('#section').load('/chart/layout_1');
+            case 'A01':
+                $('#section').load('/git');
                 break;
 
         }

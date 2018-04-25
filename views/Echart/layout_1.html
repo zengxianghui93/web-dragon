@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Vue</title>
+</head>
+
+<body>
+    <header>
+        <h2>eChart添加基准线</h2>
+    </header>
+    <ul id="example-nav" class="nav nav-tabs">
+        <li role="presentation" id="example-result-btn" class="active" onclick="showResult()">
+            <a href="#">Result</a>
+        </li>
+        <li role="presentation" id="example-js-btn" class="" onclick="showJs()">
+            <a href="#">JS</a>
+        </li>
+        <li role="presentation" id="example-css-btn" class="" onclick="showCss()">
+            <a href="#">CSS</a>
+        </li>
+        <li role="presentation" id="example-html-btn" class="" onclick="showHtml()">
+            <a href="#">HTML</a>
+        </li>
+    </ul>
+    <article>
+        <iframe id="example-result" width="100%" height="800" frameborder="0" src="chart/markLine"></iframe>
+        <div id="example-js" class="hidden">
+            <pre class="prettyprint source">    
+    var chart = echarts.init(document.getElementById('chart'));
+    var option = {
+        xAxis: {
+            type: 'category',
+            data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+        },
+        yAxis: {
+            type: 'value'
+        },
+        series: [{
+                data: [80, 100, 125, 200, 220, 230, 180],
+                type: 'line',
+
+            }, {
+                type: 'line',
+                markLine: {
+                    data: [{
+                        name: '150V',
+                        yAxis: 150
+                    }],
+                    itemStyle: {
+                        normal: {
+                            lineStyle: {
+                                color: '#ffa500',
+                            },
+                            label: {
+                                show: true,
+                                formatter: '{b}',
+                                color: "#ffa500",
+                                position: 'end',
+                            },
+                            labelLine: {
+                                show: true
+                            }
+                        }
+                    }
+                }
+            }, {
+                type: 'line',
+                markLine: {
+                    data: [{
+                        name: '220V',
+                        yAxis: 220
+                    }],
+                    itemStyle: {
+                        normal: {
+                            lineStyle: {
+                                color: '#00706b',
+                            },
+                            label: {
+                                show: true,
+                                formatter: '{b}',
+                                color: "#00706b",
+                                position: 'end',
+                            },
+                            labelLine: {
+                                show: true
+                            }
+                        }
+                    }
+                }
+            }, {
+                type: 'line',
+                markLine: {
+                    data: [{
+                        name: '110V',
+                        yAxis: 110
+                    }],
+                    itemStyle: {
+                        normal: {
+                            lineStyle: {
+                                color: '#ff0000',
+                            },
+                            label: {
+                                show: true,
+                                formatter: '{b}',
+                                color: "#ff0000",
+                                position: 'end',
+                            },
+                            labelLine: {
+                                show: true
+                            }
+                        }
+                    }
+                }
+            },
+
+        ]
+    };
+
+    chart.setOption(option);
+            </pre>
+        </div>
+        <div id="example-css" class="hidden">
+            <pre class="prettyprint source">
+    .content {
+        width: 800px;
+        height: 300px;
+    }
+            </pre>
+        </div>
+        <div id="example-html" class="hidden">
+            <pre class="prettyprint source">
+    &lt;head>
+        &lt;meta charset="utf-8">
+        &lt;title>Web Drag&lt;/title>
+    &lt;/head>
+    
+    &lt;body>
+        &lt;div id="chart" class="content">&lt;/div>
+    &lt;/body>
+            </pre>
+        </div>
+    </article>
+    <script>
+        prettyPrint();
+        var exampleResult = document.getElementById('example-result');
+        var exampleJs = document.getElementById('example-js');
+        var exampleCss = document.getElementById('example-css');
+        var exampleHtml = document.getElementById('example-html');
+
+        var exampleResultBtn = document.getElementById('example-result-btn');
+        var exampleJsBtn = document.getElementById('example-js-btn');
+        var exampleCssBtn = document.getElementById('example-css-btn');
+        var exampleHtmlBtn = document.getElementById('example-html-btn');
+
+        function setActive(el) {
+            el.className += ' active';
+        }
+
+        function setInactive(el) {
+            el.className = el.className.replace(/\s*active\s*/g, '');
+        }
+
+        function show(el) {
+            el.className = el.className.replace(/\s*hidden\s*/g, '');
+        }
+
+        function hide(el) {
+            el.className += ' hidden';
+        }
+
+        function showJs() {
+            hide(exampleCss);
+            hide(exampleHtml);
+            hide(exampleResult);
+            setInactive(exampleCssBtn);
+            setInactive(exampleHtmlBtn);
+            setInactive(exampleResultBtn);
+
+            show(exampleJs);
+            setActive(exampleJsBtn);
+        }
+
+        function showHtml() {
+            hide(exampleCss);
+            hide(exampleJs);
+            hide(exampleResult);
+            setInactive(exampleCssBtn);
+            setInactive(exampleJsBtn);
+            setInactive(exampleResultBtn);
+
+            show(exampleHtml);
+            setActive(exampleHtmlBtn);
+        }
+
+        function showResult() {
+            hide(exampleCss);
+            hide(exampleJs);
+            hide(exampleHtml);
+            setInactive(exampleCssBtn);
+            setInactive(exampleJsBtn);
+            setInactive(exampleHtmlBtn);
+
+            show(exampleResult);
+            setActive(exampleResultBtn);
+        }
+
+        function showCss() {
+            hide(exampleResult);
+            hide(exampleJs);
+            hide(exampleHtml);
+            setInactive(exampleResultBtn);
+            setInactive(exampleJsBtn);
+            setInactive(exampleHtmlBtn);
+
+            show(exampleCss);
+            setActive(exampleCssBtn);
+        }
+    </script>
+</body>

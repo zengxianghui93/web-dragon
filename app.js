@@ -30,6 +30,7 @@ const css = require('./routes/Css/index');
 const git = require('./routes/Git/index');
 const js = require('./routes/Javascript/index');
 const bootstrap = require('./routes/Bootstrap/index');
+const chart = require('./routes/Echart/index');
 
 app.use('/', index);
 app.use('/vue', vue);
@@ -38,6 +39,7 @@ app.use('/css', css);
 app.use('/git', git);
 app.use('/js', js);
 app.use('/bootstrap', bootstrap);
+app.use('/chart', chart);
 
 
 
