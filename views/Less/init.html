@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <link rel="stylesheet/less" type="text/css" href="/stylesheets/styles.less" /> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.0.2/less.min.js"></script> -->
+    <style lang="less">
+        @import url("/stylesheets/styles.less");
+    </style>
+</head>
+
+<body>
+    <div id="header" style="width:100%;height:100px;"></div>
+    <!-- <span> less使用方法：1.命令行方法（Command Line Usage） 2.网页的方式（Browser Usage）</span>
+    <span>命令行 初始化： npm install less -g 查看 less 是否安装成功 lessc -v //lessc 3.0.1 (Less Compiler) [JavaScript] 编译.less lessc bootstrap.less bootstrap.css</span>
+    <span><link rel="stylesheet/less" type="text/css" href="styles.less" />
+        <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.0.2/less.min.js" ></script>
+    </span>
+    <span>note: link中type为 "stylesheet/less"</span>
+    <span>
+            .less
+            @nice-blue: #5B83AD;
+            @light-blue: @nice-blue + #111;
+            #header {
+                background: @light-blue;
+            }
+    </span>
+    <span>
+        use:
+        <div id="header" style="width:100%;height:100px;"></div>
+        note:这样在开发环境下没什么问题，但是这样会额外加载一个less.min.js并且需要先编译一下.less文件（实际转换成了。css文件）会增加额外的开销，所以在生产环境上，建议先将less文件编译成css文件
+    </span>
+    <span>
+        推荐在webpack中使用，比如vue-cli生产的工程直接引入npm install less -g到工程目录下 就可以直接使用less了
+    </span> -->
+</body>
+
+</html>
