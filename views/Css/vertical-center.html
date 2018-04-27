@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web Dragon</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .father {
+            width: 400px;
+            height: 400px;
+            background: gray;
+            position: relative;
+        }
+        
+        .son {
+            width: 100px;
+            height: 100px;
+            background-color: burlywood;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+        
+        .vertical-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            background-color: goldenrod;
+        }
+        
+        .outer {
+            position: relative;
+            width: 500px;
+            height: 300px;
+            background: gray;
+        }
+        
+        .inner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100px;
+            height: 100px;
+            background-color: gold;
+            -ms-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+        
+        .box1 {
+            position: relative;
+            width: 50px;
+            height: 50px;
+            background-color: goldenrod;
+            top: 100px;
+            left: 200px;
+        }
+        
+        .box2 {
+            width: 50px;
+            height: 50px;
+            background-color: aqua;
+            -ms-transform: translate(200px, 100px);
+            -moz-transform: translate(200px, 100px);
+            -o-transform: translate(200px, 100px);
+            transform: translate(200px, 100px);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 垂直居中 -->
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <div style="margin:20px;"></div>
+    <!-- css3垂直居中 -->
+    <div class="outer">
+        <div class="inner">
+
+        </div>
+    </div>
+    <div style="margin:20px;"></div>
+    <!-- 相对定位和 translate区别 -->
+    <div class="outer">
+        <!-- offsetLeft offsetTop有值 动画由CPU渲染-->
+        <div class="box1"></div>
+    </div>
+    <div style="margin:20px;"></div>
+    <div class="outer">
+        <!-- offsetLeft offsetTop值为0 并且动画有GUP渲染 更平滑 -->
+        <div class="box2"></div>
+    </div>
+</body>
+
+</html>
