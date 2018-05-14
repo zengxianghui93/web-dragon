@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web Drag</title>
+    <style>
+        .content {
+            width: 800px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="chart" class="content"></div>
+    <script src="./javascripts/echarts.min.js"></script>
+    <!-- <script src="../../public/javascripts/echarts.min.js"></script>/ -->
+    <script>
+        dataArr = [{
+            key: '00:00',
+            value: 1
+        }, {
+            key: '01:00',
+            value: 2
+        }, {
+            key: '02:00',
+            value: 3
+        }, {
+            key: '03:00',
+            value: 4
+        }, {
+            key: '04:00',
+            value: 5
+        }, {
+            key: '05:00',
+            value: 6
+        }, {
+            key: '06:00',
+            value: 7
+        }, {
+            key: '07:00',
+            value: 8
+        }, {
+            key: '08:00',
+            value: 9
+        }, {
+            key: '09:00',
+            value: 10
+        }, {
+            key: '10:00',
+            value: 11
+        }, {
+            key: '11:00',
+            value: 12
+        }, {
+            key: '12:00',
+            value: 13
+        }, {
+            key: '13:00',
+            value: 14
+        }, {
+            key: '14:00',
+            value: 15
+        }, {
+            key: '15:00',
+            value: 16
+        }, {
+            key: '16:00',
+            value: 17
+        }, {
+            key: '17:00',
+            value: 18
+        }, {
+            key: '18:00',
+            value: 19
+        }, {
+            key: '19:00',
+            value: 20
+        }, {
+            key: '20:00',
+            value: 21
+        }, {
+            key: '21:00',
+            value: 22
+        }, {
+            key: '22:00',
+            value: 23
+        }, {
+            key: '23:00',
+            value: 24
+        }];
+        dataLength = dataArr.length;
+        var interval = 1;
+
+        // var hourNum = hour / (3600 / interval);
+
+        var series = {
+            name: '日电压',
+            type: 'line',
+            data: dataArr
+        };
+
+        series.markPoint = {
+            data: [{
+                name: name
+                    // xAxis: hourNum,
+                    // yAxis: dayArr[hourNum]
+            }],
+            tooltip: {
+                trigger: 'item',
+                formatter: function(param) {
+                    return param.name + ':' + Number(param.data.yAxis).toFixed(4) + unit;
+                }
+            }
+        }
+
+
+
+        var chart = echarts.init(document.getElementById('chart'));
+
+        var option = {
+            tooltip: {
+                trigger: 'axis',
+                formatter: function(params) {
+                    var time = Number(params[0].name) / interval;
+                    var hour = parseInt(time);
+                    var minus = (time - parseInt(time)) * 60 == 0 ? "00" : (time - parseInt(time)) * 60;
+                    var timeString = hour + ":" + minus;
+                    var value;
+                    if (isNaN(Number(params[0].data))) {
+                        value = "--";
+                    } else {
+                        value = Number(params[0].data).toFixed(4) + unit;
+                    }
+                    return "时间:" + timeString + "<br/>" + params[0].seriesName + ":" + value + "<br/>";
+                }
+            },
+            xAxis: [{
+                type: 'category',
+                boundaryGap: false,
+                axisLabel: {
+                    interval: 0,
+                    textStyle: {
+                        color: '#333',
+                        fontFamily: 'verdana',
+                        fontSize: 10,
+                        fontStyle: 'normal',
+                        fontWeight: 'bold'
+                    },
+                    formatter: function(value) {
+                        return value / interval;
+                    }
+                },
+                name: '小时',
+                nameTextStyle: {
+                    color: '#333'
+                },
+                data: function() {
+                    var arr = [];
+                    for (var i = 0; i <= dataLength; i++) {
+                        arr.push(i + "");
+                    }
+                    return arr;
+                }()
+            }],
+            yAxis: [{
+                type: 'value',
+                axisLabel: {
+                    formatter: '{value}',
+                    textStyle: {
+                        color: '#333',
+                        fontFamily: 'verdana',
+                        fontSize: 10,
+                        fontStyle: 'normal',
+                        fontWeight: 'bold'
+                    }
+
+                },
+                name: 'kV',
+                nameTextStyle: {
+                    color: '#333'
+                }
+
+            }],
+            grid: {
+                x: 60,
+                y: 50,
+                x2: 35,
+                y2: 40
+
+            },
+            series: [
+                series
+            ]
+        };
+
+        chart.setOption(option);
+    </script>
+</body>
+
+</html>

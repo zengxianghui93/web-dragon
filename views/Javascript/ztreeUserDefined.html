@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home | web API</title>
+
+</head>
+
+<body>
+    <div id="tree">
+
+    </div>
+    <script>
+        function initZtree() {
+            var setting = {
+                showLine: false,
+                checkable: true,
+                view: {
+                    addHoverDom: addHoverDom,
+                    removeHoverDom: removeHoverDom
+                },
+                async: {
+                    enable: true,
+                    type: 'get',
+                    dataType: 'json',
+                    url: "/mapService/queryEquipmentList?versionId=" + nStateId,
+                    dataFilter: ajaxDataFilter
+                },
+                data: {
+                    simpleData: {
+                        enable: true,
+                        idKey: 'id',
+                        pIdKey: 'pId',
+                        rootPId: 10
+                    }
+                },
+                callback: {
+                    beforeClick: zTreeBeforeClick,
+                    onClick: zTreeOnClick
+                }
+            };
+
+            //ztree 初始化
+            $.fn.zTree.init($("#tree"), setting);
+        }
+
+        function addHoverDom(treeId, treeNode) {
+            var treeObj = $.fn.zTree.getZTreeObj("tree");
+            var secetedNode = treeObj.getSelectedNodes()[0];
+
+            //只有选中的node才可以显示按钮
+            if (secetedNode && treeNode.id === secetedNode.id) {
+                var aObj = $("#" + treeNode.tId);
+                if ($("#diyBtn_" + treeNode.id).length > 0) return;
+                var editStr;
+                if (treeNode.type == '153') {
+                    editStr = "<span class='button sidebar-icon_info_lg' id='diyBtn_" + treeNode.id + "' title='" + treeNode.name + "' onfocus='this.blur();'></span>";
+                } else {
+                    editStr = "<span class='button sidebar-icon_info' id='diyBtn_" + treeNode.id + "' title='" + treeNode.name + "' onfocus='this.blur();'></span>";
+                }
+
+                aObj.append(editStr);
+                var btn = $("#diyBtn_" + treeNode.id);
+                if (btn) btn.bind("click", function() {
+                    cardinfo(null, treeNode.type, treeNode.id); //直接显示变电站的信息
+                });
+            }
+        }
+
+        function removeHoverDom(treeId, treeNode) {
+            $("#diyBtn_" + treeNode.id).unbind().remove();
+        }
+    </script>
+</body>
+
+</html>
